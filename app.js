@@ -247,7 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let particles = [];
     let dataPackets = [];
     let sonarRipples = [];
-    let trackingTargets = [];
     const mouse = { x: -1000, y: -1000, active: false };
 
     function resizeCanvas() {
@@ -441,78 +440,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // AI Surveillance Bounding Box Tracker
-    class TrackingTarget {
-      constructor(index) {
-        this.targetNode = null;
-        this.boxSize = 36;
-        this.label = index === 0 ? 'OBJ_CAM_01' : 'NEURAL_NODE_07';
-        this.conf = 98.4;
-        this.timer = 0;
-        this.switchDuration = 240 + Math.floor(Math.random() * 180);
-      }
-
-      pickNewTarget() {
-        if (particles.length > 0) {
-          this.targetNode = particles[Math.floor(Math.random() * particles.length)];
-          this.conf = (96.5 + Math.random() * 3.4).toFixed(1);
-        }
-      }
-
-      update() {
-        this.timer++;
-        if (!this.targetNode || this.timer > this.switchDuration) {
-          this.timer = 0;
-          this.pickNewTarget();
-        }
-      }
-
-      draw(isDark) {
-        if (!this.targetNode) return;
-        const x = this.targetNode.x;
-        const y = this.targetNode.y;
-        const s = this.boxSize / 2;
-        const b = 6; // Bracket length
-
-        ctx.save();
-        ctx.strokeStyle = isDark ? 'rgba(56, 189, 248, 0.4)' : 'rgba(2, 132, 199, 0.35)';
-        ctx.lineWidth = 1.2;
-
-        // Draw 4 corner brackets
-        ctx.beginPath();
-        // Top Left
-        ctx.moveTo(x - s, y - s + b); ctx.lineTo(x - s, y - s); ctx.lineTo(x - s + b, y - s);
-        // Top Right
-        ctx.moveTo(x + s - b, y - s); ctx.lineTo(x + s, y - s); ctx.lineTo(x + s, y - s + b);
-        // Bottom Right
-        ctx.moveTo(x + s, y + s - b); ctx.lineTo(x + s, y + s); ctx.lineTo(x + s - b, y + s);
-        // Bottom Left
-        ctx.moveTo(x - s + b, y + s); ctx.lineTo(x - s, y + s); ctx.lineTo(x - s, y + s - b);
-        ctx.stroke();
-
-        // High-tech AI readout tag
-        ctx.font = '9px "JetBrains Mono", monospace';
-        ctx.fillStyle = isDark ? 'rgba(56, 189, 248, 0.65)' : 'rgba(2, 132, 199, 0.7)';
-        ctx.fillText(`${this.label} [${this.conf}%]`, x - s, y - s - 4);
-        ctx.restore();
-      }
-    }
-
     function initParticles() {
       particles = [];
       dataPackets = [];
-      trackingTargets = [];
 
       const isMobile = width < 600;
       const count = isMobile ? 24 : Math.min(Math.floor((width * height) / 24000), 52);
       for (let i = 0; i < count; i++) {
         particles.push(new Particle(i));
-      }
-
-      // Initialize 2 tracking reticles
-      if (!isMobile) {
-        trackingTargets.push(new TrackingTarget(0));
-        trackingTargets.push(new TrackingTarget(1));
       }
     }
 
@@ -632,11 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 4. Update & Draw AI Vision Tracking Bounding Boxes
-      trackingTargets.forEach(target => {
-        target.update();
-        target.draw(isDark);
-      });
+
 
       requestAnimationFrame(renderLoop);
     }
