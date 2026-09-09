@@ -1,8 +1,0 @@
-local-server.js
-generate_pdf.js
-generate_pptx.js
-copy_vendor.js
-start-server.bat
-package.json
-package-lock.json
-node_modules/
