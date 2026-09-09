@@ -93,15 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Active pill click tracking
-  mobPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      mobPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
+  // Active link click tracking
+  const navLinks = document.querySelectorAll('.quick-nav .nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
     });
   });
 
-  // ScrollSpy to update active state of desktop and mobile pills
+  // ScrollSpy to update active state of desktop and mobile navigation
   const trackedSections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let currentId = '';
@@ -114,20 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (currentId) {
-      mobPills.forEach(pill => {
-        const href = pill.getAttribute('href');
-        if (href === `#${currentId}`) {
-          pill.classList.add('active');
-        } else {
-          pill.classList.remove('active');
-        }
-      });
-
-      document.querySelectorAll('.quick-nav .nav-link').forEach(nav => {
+      navLinks.forEach(nav => {
         if (nav.getAttribute('href') === `#${currentId}`) {
           nav.classList.add('active');
         } else {
           nav.classList.remove('active');
+        }
+      });
+
+      mobDrawerLinks.forEach(drawerLink => {
+        if (drawerLink.getAttribute('href') === `#${currentId}`) {
+          drawerLink.classList.add('active');
+        } else {
+          drawerLink.classList.remove('active');
         }
       });
     }

@@ -281,10 +281,6 @@ p {
   display: none !important;
 }
 
-.mobile-subnav-scroll {
-  display: none !important;
-}
-
 .mobile-nav-drawer {
   position: fixed;
   inset: 0;
@@ -395,37 +391,45 @@ p {
   background: var(--bg-surface-elevated);
 }
 
-.mob-pill {
-  display: inline-flex;
+.btn-menu-pill {
+  display: none;
   align-items: center;
-  gap: 6px;
-  padding: 5px 13px;
+  gap: 5px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--bg-card-border);
-  color: var(--text-secondary);
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #0284c7;
   font-size: 0.78rem;
-  font-weight: 600;
-  text-decoration: none;
-  flex-shrink: 0;
+  font-weight: 700;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
-.mob-pill svg {
+.btn-menu-pill svg {
   width: 14px;
   height: 14px;
 }
 
-.mob-pill:hover {
-  color: #0284c7;
-  border-color: #0284c7;
-}
-
-.mob-pill.active {
+.btn-menu-pill:hover {
   background: #0284c7;
   border-color: #0284c7;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
+
+body.theme-dark .btn-menu-pill {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+body.theme-dark .btn-menu-pill:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.drawer-group {
+  margin-bottom: 0.85rem;
 }
 
 .hidden { display: none !important; }
@@ -2519,33 +2523,54 @@ body.theme-dark .lightbox-caption {
 }
 
 @media (max-width: 960px) {
-  .quick-nav {
+  .nav-desk-only {
     display: none !important;
   }
-  .mobile-only-btn {
+  .quick-nav {
     display: flex !important;
+    gap: 12px;
   }
-  .mobile-subnav-scroll {
-    display: flex !important;
+  .quick-nav .nav-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 3px 6px;
+  }
+  .quick-nav .nav-link:hover,
+  .quick-nav .nav-link.active {
+    color: #0284c7;
+    font-weight: 700;
+  }
+  .mobile-only-btn {
+    display: inline-flex !important;
   }
   .document-container {
-    padding-top: 110px !important;
+    padding-top: 76px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .quick-nav, .btn-text-hide-mobile {
+  .btn-text-hide-mobile {
     display: none !important;
   }
-
+  .header-inner {
+    padding: 0 0.85rem;
+    height: 52px;
+  }
+  .quick-nav {
+    display: flex !important;
+    gap: 8px;
+  }
+  .quick-nav .nav-link {
+    font-size: 0.78rem;
+    padding: 2px 4px;
+  }
   .hero-title {
     font-size: 2.2rem;
   }
-
   .section-heading {
     font-size: 1.75rem;
   }
-
   .grid-2-col, .grid-3-col, .tech-grid-modern, .features-human-grid, .sector-cards-grid, .contact-card-modern, .timeline-workflow, .onboarding-grid {
     grid-template-columns: 1fr;
   }
@@ -3007,13 +3032,15 @@ body.theme-dark .poster-footer-pill svg {
   .presentation-slide {
     padding: 1.5rem 0.85rem 2rem 0.85rem;
   }
-  .mobile-subnav-scroll {
-    padding: 6px 10px 8px;
+  .document-container {
+    padding-top: 68px !important;
+  }
+  .quick-nav {
     gap: 6px;
   }
-  .mob-pill {
-    padding: 4px 10px;
+  .quick-nav .nav-link {
     font-size: 0.74rem;
+    padding: 2px 3px;
   }
   .brand-poster-badge {
     padding: 4px 10px;

@@ -43,12 +43,12 @@
       </div>
 
       <nav class="quick-nav">
-        <a href="#cover" class="nav-link">Beranda</a>
-        <a href="#tentang" class="nav-link">Manfaat</a>
-        <a href="#fitur" class="nav-link">Kemampuan AI</a>
-        <a href="#katalog" class="nav-link">Katalog Solusi</a>
-        <a href="#dashboard" class="nav-link">Galeri Sistem</a>
-        <a href="#spesifikasi" class="nav-link">Spesifikasi</a>
+        <a href="#cover" class="nav-link active">Beranda</a>
+        <a href="#tentang" class="nav-link nav-desk-only">Manfaat</a>
+        <a href="#fitur" class="nav-link">Fitur AI</a>
+        <a href="#katalog" class="nav-link">Katalog</a>
+        <a href="#dashboard" class="nav-link nav-desk-only">Galeri</a>
+        <a href="#spesifikasi" class="nav-link nav-desk-only">Spesifikasi</a>
       </nav>
 
       <div class="header-actions">
@@ -57,24 +57,13 @@
           <i data-lucide="moon" id="themeIcon"></i>
         </button>
 
-        <!-- Mobile Menu Toggle Button (Hamburger) -->
-        <button id="mobileMenuBtn" class="action-icon-circle mobile-only-btn" title="Buka Menu Navigasi" aria-label="Buka Menu Navigasi">
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="btn-menu-pill mobile-only-btn" title="Buka Menu Lengkap" aria-label="Buka Menu Lengkap">
           <i data-lucide="menu" id="mobileMenuIcon"></i>
+          <span>Menu</span>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Sticky Horizontal Scroll Navigation -->
-    <nav class="mobile-subnav-scroll" aria-label="Navigasi Cepat HP">
-      <a href="#cover" class="mob-pill active"><i data-lucide="home"></i> Beranda</a>
-      <a href="#tentang" class="mob-pill"><i data-lucide="shield-check"></i> Manfaat</a>
-      <a href="#fitur" class="mob-pill"><i data-lucide="crosshair"></i> Kemampuan AI</a>
-      <a href="#katalog" class="mob-pill"><i data-lucide="layers"></i> Katalog Solusi</a>
-      <a href="#dashboard" class="mob-pill"><i data-lucide="layout-dashboard"></i> Galeri Sistem</a>
-      <a href="#spesifikasi" class="mob-pill"><i data-lucide="cpu"></i> Spesifikasi</a>
-      <a href="#roi" class="mob-pill"><i data-lucide="calculator"></i> Kalkulator ROI</a>
-      <a href="#kontak" class="mob-pill"><i data-lucide="phone-call"></i> Kontak</a>
-    </nav>
   </header>
 
   <!-- MOBILE NAV DRAWER OVERLAY -->
@@ -97,8 +86,8 @@
       </div>
 
       <div class="mobile-drawer-body">
-        <span class="drawer-section-label">NAVIGASI DOKUMEN</span>
-        <div class="mobile-drawer-links">
+        <div class="drawer-group">
+          <span class="drawer-section-label">HALAMAN UTAMA</span>
           <a href="#cover" class="mob-drawer-link active">
             <div class="drawer-link-left"><i data-lucide="home"></i> <span>Beranda</span></div>
             <i data-lucide="chevron-right" class="arrow"></i>
@@ -111,6 +100,10 @@
             <div class="drawer-link-left"><i data-lucide="crosshair"></i> <span>Kemampuan AI & Deteksi</span></div>
             <i data-lucide="chevron-right" class="arrow"></i>
           </a>
+        </div>
+
+        <div class="drawer-group mt-3">
+          <span class="drawer-section-label">KATALOG & SISTEM</span>
           <a href="#katalog" class="mob-drawer-link">
             <div class="drawer-link-left"><i data-lucide="layers"></i> <span>Katalog Solusi & Kamera</span></div>
             <i data-lucide="chevron-right" class="arrow"></i>
@@ -123,6 +116,10 @@
             <div class="drawer-link-left"><i data-lucide="cpu"></i> <span>Spesifikasi Teknis</span></div>
             <i data-lucide="chevron-right" class="arrow"></i>
           </a>
+        </div>
+
+        <div class="drawer-group mt-3">
+          <span class="drawer-section-label">SIMULASI & KONTAK</span>
           <a href="#roi" class="mob-drawer-link">
             <div class="drawer-link-left"><i data-lucide="calculator"></i> <span>Kalkulator Efisiensi Biaya</span></div>
             <i data-lucide="chevron-right" class="arrow"></i>
