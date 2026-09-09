@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XTUR AI Surveillance Platform — Panduan Produk & Solusi Keamanan Pintar</title>
+  <meta name="description" content="Profil Produk XTUR: Solusi pengawasan cerdas CCTV berbasis AI dan Computer Vision yang manusiawi, andal, dan melindungi ketenangan ruang kerja serta komunitas Anda.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PptxGenJS for True Native PowerPoint (.pptx) Export -->
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mode-document theme-light">
+
+  <!-- DYNAMIC CYBER SURVEILLANCE BACKGROUND ANIMATION -->
+  <div class="cyber-bg-layer no-print" aria-hidden="true">
+    <div class="bg-glow-orb orb-1"></div>
+    <div class="bg-glow-orb orb-2"></div>
+    <div class="bg-glow-orb orb-3"></div>
+    <div class="cyber-grid-overlay"></div>
+    <canvas id="cyberNetworkCanvas"></canvas>
+  </div>
+
+  <!-- TOP APP BAR -->
+  <header class="app-header no-print">
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="brand-logo">
+          <i data-lucide="shield-check" class="brand-icon"></i>
+        </div>
+        <div class="brand-name">XTUR <span class="brand-tag">VISION AI</span></div>
+      </div>
+
+      <nav class="quick-nav">
+        <a href="#cover" class="nav-link">Beranda</a>
+        <a href="#tentang" class="nav-link">Manfaat</a>
+        <a href="#fitur" class="nav-link">Fitur & Solusi</a>
+        <a href="#dashboard" class="nav-link">Galeri Sistem</a>
+        <a href="#spesifikasi" class="nav-link">Spesifikasi</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Icon -->
+        <button id="themeToggleBtn" class="action-icon-circle" title="Ganti Mode Terang / Gelap">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <!-- View Mode Switcher -->
+        <div class="view-toggle-group">
+          <button id="btnDocView" class="toggle-btn active" title="Tampilan Dokumen">
+            <i data-lucide="file-text"></i> Dokumen
+          </button>
+          <button id="btnDeckView" class="toggle-btn" title="Tampilan Slide Presentasi">
+            <i data-lucide="presentation"></i> Slide PPT
+          </button>
+        </div>
+
+        <!-- Direct Downloads -->
+        <div class="export-actions-group">
+          <a href="/exports/XTUR-AI-Surveillance-Product-Profile.pdf" download="XTUR-AI-Surveillance-Product-Profile.pdf" id="btnPrintPDF" class="btn-chip-export pdf" title="Unduh Dokumen PDF Resmi A4">
+            <i data-lucide="file-down"></i> PDF
+          </a>
+          <a href="/exports/XTUR-AI-Surveillance-Product-Profile.pptx" download="XTUR-AI-Surveillance-Product-Profile.pptx" id="btnDownloadPPTX" class="btn-chip-export pptx" title="Unduh Berkas Asli PowerPoint 16:9">
+            <i data-lucide="download"></i> PPTX
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PPT DECK CONTROLS (Only visible in Slide Mode) -->
+  <div id="slideControls" class="slide-controls-bar no-print hidden">
+    <div class="slide-ctrl-inner">
+      <button id="prevSlideBtn" class="ctrl-arrow-btn" title="Slide Sebelumnya (Panah Kiri)"><i data-lucide="chevron-left"></i></button>
+      <div class="slide-indicator">
+        <span id="currentSlideNum">1</span> / <span id="totalSlideNum">13</span>
+        <span id="currentSlideTitle" class="slide-title-chip">Selamat Datang di XTUR AI</span>
+      </div>
+      <button id="nextSlideBtn" class="ctrl-arrow-btn" title="Slide Berikutnya (Panah Kanan)"><i data-lucide="chevron-right"></i></button>
+      <div class="deck-btn-divider"></div>
+      <button id="fullscreenBtn" class="ctrl-icon-btn" title="Layar Penuh (F11)"><i data-lucide="maximize"></i></button>
+      <button id="deckPptxBtn" class="ctrl-icon-btn highlight-pptx" title="Unduh Slide Ini Menjadi .pptx"><i data-lucide="file-presentation"></i> Unduh PPTX</button>
+      <button id="exitDeckBtn" class="ctrl-text-btn"><i data-lucide="x"></i> Keluar</button>
+    </div>
+  </div>
+
+  <!-- MAIN DOCUMENT CONTAINER -->
+  <main id="mainContent" class="document-container">
+
+    <!-- ==================== SLIDE / BAB 1: COVER ==================== -->
+    <section id="cover" class="presentation-slide cover-slide" data-slide-title="Profil Produk & Ringkasan Solusi">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — DOKUMEN PROFIL PRODUK RESMI</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-content cover-grid">
+        <div class="cover-text-content">
+          <div class="brand-poster-badge">
+            <span class="poster-logo-x">X</span><span class="poster-logo-tur">TUR</span>
+            <span class="poster-logo-sub">AI SECURITY MONITORING SYSTEM</span>
+          </div>
+          <h1 class="hero-title poster-style">
+            Smarter Surveillance <br><span class="gradient-cyan">for a Safer Tomorrow</span>
+          </h1>
+          <p class="hero-desc poster-desc">
+            <strong>XTUR</strong> adalah software CCTV berbasis Artificial Intelligence yang menggunakan teknologi <strong>Object Detection</strong> untuk mendeteksi objek, menganalisis kejadian, dan memberikan notifikasi secara real-time. Solusi keamanan cerdas untuk berbagai kebutuhan industri, perusahaan, dan instansi.
+          </p>
+
+          <!-- 6 Key Capabilities Grid from Poster -->
+          <div class="poster-features-grid">
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="crosshair"></i></div>
+              <span>Real-time Detection</span>
+            </div>
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="brain"></i></div>
+              <span>AI Powered Analytics</span>
+            </div>
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="video"></i></div>
+              <span>Multi Camera Support</span>
+            </div>
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="bell"></i></div>
+              <span>Instant Alert & Notification</span>
+            </div>
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="layout-dashboard"></i></div>
+              <span>Easy to Use Dashboard</span>
+            </div>
+            <div class="p-feat-item">
+              <div class="p-feat-icon"><i data-lucide="boxes"></i></div>
+              <span>Scalable Solution</span>
+            </div>
+          </div>
+
+          <div class="cover-cta-row no-print mt-3">
+            <button class="btn-glow" onclick="document.getElementById('kemampuan').scrollIntoView({behavior: 'smooth'})">
+              <i data-lucide="scan"></i> Kemampuan Deteksi AI
+            </button>
+            <button class="btn-outline" onclick="switchMode('deck')">
+              <i data-lucide="play"></i> Mode Slide PPT
+            </button>
+          </div>
+
+          <div class="hero-signature">
+            <span>Diterbitkan resmi oleh <strong>CV Maudy Network Komunikasi</strong> — Edisi Profil 2026</span>
+          </div>
+        </div>
+
+        <div class="cover-visual-content">
+          <div class="hero-card-showcase poster-card-wrap">
+            <div class="showcase-header">
+              <div class="status-live"><span class="live-dot"></span> SISTEM AKTIF & TERVERIFIKASI</div>
+              <span class="platform-link">XTUR Surveillance System</span>
+            </div>
+            <div class="showcase-img-wrap image-zoomable" data-img="assets/images/xtur-overview-poster.jpg" data-caption="Infografis Resmi XTUR AI Security Monitoring System — Smarter Surveillance for a Safer Tomorrow">
+              <img src="assets/images/xtur-overview-poster.jpg" alt="XTUR AI Security Monitoring Poster" class="hero-img poster-fit">
+              <div class="showcase-zoom-tag"><i data-lucide="maximize-2"></i> Perbesar Poster Resmi</div>
+            </div>
+            <div class="showcase-footer poster-footer-pill">
+              <i data-lucide="shield-check"></i> Teknologi AI untuk Keamanan yang Lebih Cerdas, Cepat dan Andal
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 1</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 2: TENTANG & MASALAH ==================== -->
+    <section id="tentang" class="presentation-slide" data-slide-title="Empati di Balik Pengawasan Cerdas">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 02: PENDEKATAN MANUSIAWI</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="heart"></i> PENDEKATAN KAMI</div>
+        <h2 class="section-heading">Mengapa CCTV Biasa Tak Lagi Cukup?</h2>
+        <p class="section-subtext">Kami memahami tantangan berat petugas keamanan: mata yang lelah menatap belasan layar, sementara risiko kehilangan atau pelanggaran dapat terjadi dalam hitungan detik.</p>
+      </div>
+
+      <div class="slide-content grid-2-col">
+        <div class="card-soft danger-edge">
+          <div class="card-icon-header red"><i data-lucide="user-x"></i></div>
+          <h3 class="card-title">Kelemahan Pengawasan Konvensional</h3>
+          <p class="card-intro">Selama ini kita mengandalkan rekaman pasif yang sering kali mengecewakan saat benar-benar dibutuhkan:</p>
+          
+          <ul class="human-list">
+            <li>
+              <strong>Kelelahan Fisik yang Tak Terhindarkan:</strong>
+              <p>Setelah 20 menit menatap puluhan kotak video, mata petugas secara alami kehilangan fokus hingga 45%. Kejadian kritis pun terlewat tanpa sengaja.</p>
+            </li>
+            <li>
+              <strong>Selalu Terlambat Menolong:</strong>
+              <p>CCTV biasa hanya menjadi "alat bukti setelah musibah terjadi" (<em>post-mortem</em>), bukan pelindung yang mencegah tindak kejahatan atau kecelakaan.</p>
+            </li>
+            <li>
+              <strong>Pencarian Rekaman yang Melelahkan:</strong>
+              <p>Mencari satu rekaman pencurian butuh memutar video berjam-jam secara manual, menghabiskan waktu berharga tim manajemen Anda.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-soft success-edge">
+          <div class="card-icon-header green"><i data-lucide="smile"></i></div>
+          <h3 class="card-title">Bagaimana XTUR Membantu Tim Anda</h3>
+          <p class="card-intro">XTUR hadir bukan untuk menggantikan manusia, melainkan menjadi "asisten jeli" yang meringankan pekerjaan sehari-hari:</p>
+          
+          <ul class="human-list">
+            <li>
+              <strong>Mata Kedua yang Tak Pernah Lelah:</strong>
+              <p>Model AI memantau pergerakan dengan kecepatan <strong>4.2 milidetik</strong>. Begitu ada orang masuk area terlarang atau kendaraan mencurigakan, alarm otomatis berbunyi.</p>
+            </li>
+            <li>
+              <strong>Menghargai Hak Privasi Orang Lain:</strong>
+              <p>Dengan fitur <em>Privacy Face Blur</em>, wajah karyawan dan pengunjung otomatis disamarkan sehingga lingkungan tetap aman tanpa rasa diawasi secara berlebihan.</p>
+            </li>
+            <li>
+              <strong>Pencarian Bukti Seketika:</strong>
+              <p>Cukup pilih tanggal atau jenis objek (mobil/orang), snapshot foto asli dan nomor polisi langsung muncul dalam 1 detik.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Comparative Table -->
+      <div class="mt-4 card-soft">
+        <h4 class="sub-card-title"><i data-lucide="sliders-horizontal"></i> Perbandingan Nyata: CCTV Lama vs Ekosistem XTUR AI</h4>
+        <div class="table-responsive">
+          <table class="modern-table">
+            <thead>
+              <tr>
+                <th>Aspek Pengawasan</th>
+                <th>CCTV Konvensional</th>
+                <th>Dengan XTUR AI Vision</th>
+                <th>Dampak Bagi Manajemen & Petugas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Beban Mental Petugas</strong></td>
+                <td><span class="status-pill red">Stres & Sangat Lelah</span></td>
+                <td><span class="status-pill green">Tenang & Terbantu</span></td>
+                <td>Petugas dapat fokus patroli fisik dan melayani tamu</td>
+              </tr>
+              <tr>
+                <td><strong>Respon Insiden</strong></td>
+                <td>Reaktif (15–60 menit setelah insiden)</td>
+                <td><strong>Detik itu juga</strong> (&lt; 1 detik via alert)</td>
+                <td>Kerugian aset dapat digagalkan seketika</td>
+              </tr>
+              <tr>
+                <td><strong>Pembedaan Objek</strong></td>
+                <td>Sensor gerak palsu (kucing/angin)</td>
+                <td>Akurat: Orang, Mobil, Motor, Bus, Truk</td>
+                <td>Bebas dari kepanikan alarm palsu</td>
+              </tr>
+              <tr>
+                <td><strong>Pemanfaatan Kamera Lama</strong></td>
+                <td>Sering harus beli kamera merk baru</td>
+                <td><strong>Gunakan kamera eksisting</strong> (RTSP)</td>
+                <td>Menghemat pengeluaran anggaran perusahaan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 2</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 3: TEKNOLOGI ==================== -->
+    <section id="teknologi" class="presentation-slide" data-slide-title="Teknologi Andal Tanpa Kerumitan">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 03: PONDASI TEKNOLOGI</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="cpu"></i> TEKNOLOGI INTELIGEN</div>
+        <h2 class="section-heading">Kecerdasan Buatan Terdepan, Mudah Dipakai</h2>
+        <p class="section-subtext">Di balik layar yang sederhana dan bersahabat, bekerja teknologi Computer Vision kelas industri yang hemat daya dan stabil 24/7.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="tech-grid-modern">
+          <div class="tech-card-item">
+            <div class="t-icon-box"><i data-lucide="eye"></i></div>
+            <div class="t-info">
+              <h3>YOLOv8 Real-Time Detection</h3>
+              <p class="text-sub">Model Visi Komputer Paling Akurat</p>
+              <p class="t-desc">Mendeteksi objek dalam dimensi resolusi 640x640 dengan latensi inferensi hanya <strong>4.2 ms</strong> pada GPU CUDA. Menghasilkan deteksi yang sangat presisi baik siang maupun malam.</p>
+            </div>
+          </div>
+
+          <div class="tech-card-item">
+            <div class="t-icon-box"><i data-lucide="fingerprint"></i></div>
+            <div class="t-info">
+              <h3>DeepSORT Tracking Persisten</h3>
+              <p class="text-sub">Pelacakan Tanpa Penghitungan Ganda</p>
+              <p class="t-desc">Setiap objek diberi Track ID unik (#1205, #1204). Bahkan saat pejalan kaki tertutup sejenak oleh mobil atau pohon, identitas objek tetap terkunci tanpa terhitung ganda.</p>
+            </div>
+          </div>
+
+          <div class="tech-card-item">
+            <div class="t-icon-box"><i data-lucide="scan"></i></div>
+            <div class="t-info">
+              <h3>Secondary Pipeline (ALPR & Demografi)</h3>
+              <p class="text-sub">Mengenal Plat Nomor & Komposisi Pengunjung</p>
+              <p class="t-desc">Memproses pembacaan teks plat nomor kendaraan Indonesia secara otomatis via EasyOCR dan memperkirakan rentang kelompok usia pengunjung secara etis.</p>
+            </div>
+          </div>
+
+          <div class="tech-card-item">
+            <div class="t-icon-box"><i data-lucide="database"></i></div>
+            <div class="t-info">
+              <h3>Redis Buffer & MediaMTX Gateway</h3>
+              <p class="text-sub">Jaminan Aliran Video Nol Lag</p>
+              <p class="t-desc">Menyaring aliran kamera RTSP pada 5 FPS terukur dengan buffer Redis (22.36 MB), menjaga komputer server tetap dingin dan tidak pernah mengalami crash memori.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telemetry Callout -->
+        <div class="highlight-banner mt-3">
+          <div class="hb-icon"><i data-lucide="shield-check"></i></div>
+          <div class="hb-content">
+            <h4>Kinerja Nyata Terverifikasi di Lapangan</h4>
+            <p>Pada pengujian operasional aktual: Komputer Intel Core i7-14700F hanya terbebani <strong>21% CPU</strong> dan <strong>53% RAM</strong> saat memproses 4 kamera live sekaligus. Efisien, hemat listrik, dan awet untuk pemakaian bertahun-tahun.</p>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 3</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 4: KEMAMPUAN DETEKSI OBJEK ==================== -->
+    <section id="fitur" class="presentation-slide" data-slide-title="Kemampuan Deteksi Objek">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 04: KEMAMPUAN DETEKSI OBJEK</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header detection-header-bar" id="kemampuan">
+        <div class="header-accent-line"></div>
+        <div>
+          <h2 class="section-heading-poster">Kemampuan Deteksi Objek</h2>
+          <p class="section-subtext-poster">Mendeteksi berbagai objek dan kejadian penting dengan akurasi tinggi menggunakan teknologi AI.</p>
+        </div>
+      </div>
+
+      <div class="slide-content">
+        <!-- 6 Detection Capability Cards from Reference Poster -->
+        <div class="detection-cards-row">
+          
+          <!-- 1. Person Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/01-dashboard-overview.png" alt="Person Detection" class="det-thumb">
+              <div class="det-tag-pill cyan"><i data-lucide="user"></i> Person Detection</div>
+            </div>
+            <div class="det-info">
+              <h4>Person Detection</h4>
+              <p>Deteksi orang dengan akurasi tinggi</p>
+            </div>
+          </div>
+
+          <!-- 2. Vehicle Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/03-cameras-monitor.png" alt="Vehicle Detection" class="det-thumb">
+              <div class="det-tag-pill blue"><i data-lucide="car"></i> Vehicle Detection</div>
+            </div>
+            <div class="det-info">
+              <h4>Vehicle Detection</h4>
+              <p>Deteksi kendaraan (mobil, motor, truk, dll)</p>
+            </div>
+          </div>
+
+          <!-- 3. PPE Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/02-detection-logs.png" alt="PPE Detection" class="det-thumb">
+              <div class="det-tag-pill amber"><i data-lucide="hard-hat"></i> PPE Detection</div>
+            </div>
+            <div class="det-info">
+              <h4>PPE Detection</h4>
+              <p>Deteksi penggunaan APD (helm, rompi, dll)</p>
+            </div>
+          </div>
+
+          <!-- 4. Fire & Smoke Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/03-cameras-monitor.png" alt="Fire & Smoke Detection" class="det-thumb">
+              <div class="det-tag-pill red"><i data-lucide="flame"></i> Fire & Smoke</div>
+            </div>
+            <div class="det-info">
+              <h4>Fire & Smoke Detection</h4>
+              <p>Deteksi asap dan api secara real-time</p>
+            </div>
+          </div>
+
+          <!-- 5. Intrusion Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/01-dashboard-overview.png" alt="Intrusion Detection" class="det-thumb">
+              <div class="det-tag-pill rose"><i data-lucide="shield-alert"></i> Intrusion Detection</div>
+            </div>
+            <div class="det-info">
+              <h4>Intrusion Detection</h4>
+              <p>Deteksi penyusup di area terlarang</p>
+            </div>
+          </div>
+
+          <!-- 6. Crowd Detection -->
+          <div class="det-card">
+            <div class="det-visual-box">
+              <img src="assets/images/05-reports-analytics-bottom.png" alt="Crowd Detection" class="det-thumb">
+              <div class="det-tag-pill navy"><i data-lucide="users"></i> Crowd Detection</div>
+            </div>
+            <div class="det-info">
+              <h4>Crowd Detection</h4>
+              <p>Deteksi kerumunan orang</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Additional Operational Capabilities -->
+        <div class="features-human-grid mt-4">
+          <div class="f-box">
+            <div class="f-icon purple"><i data-lucide="eye-off"></i></div>
+            <h4>Penyamaran Wajah (Privacy Face Blur)</h4>
+            <p>Otomatis memburamkan wajah pejalan kaki demi mematuhi Undang-Undang Perlindungan Data Pribadi (UU PDP).</p>
+          </div>
+          <div class="f-box">
+            <div class="f-icon green"><i data-lucide="send"></i></div>
+            <h4>Instant Alert Multi-Channel</h4>
+            <p>Peringatan otomatis berbunyi di pos jaga dan mengirim notifikasi ke Telegram atau WhatsApp seketika.</p>
+          </div>
+          <div class="f-box">
+            <div class="f-icon blue"><i data-lucide="file-spreadsheet"></i></div>
+            <h4>Laporan Audit CSV & PDF Resmi</h4>
+            <p>Ekspor rekapitulasi deteksi dan analitik berkala dengan sekali klik untuk evaluasi pimpinan dan kepolisian.</p>
+          </div>
+          <div class="f-box">
+            <div class="f-icon amber"><i data-lucide="credit-card"></i></div>
+            <h4>Pembacaan Plat Nomor (ALPR)</h4>
+            <p>Membaca plat nomor kendaraan secara otomatis dan mengaitkannya dengan 57 kode wilayah asal di Indonesia.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="print-page-number">Halaman 4</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 5: CARA KERJA ==================== -->
+    <section id="carakerja" class="presentation-slide" data-slide-title="Alur Kerja Sederhana & Cepat">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 05: CARA KERJA SISTEM</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="git-merge"></i> PROSES TRANSPARAN</div>
+        <h2 class="section-heading">Bagaimana Sistem Bekerja Untuk Anda?</h2>
+        <p class="section-subtext">Dari sorotan lensa kamera hingga pesan peringatan di saku petugas Anda, seluruh proses hanya memakan waktu sepersekian detik.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="timeline-workflow">
+          
+          <div class="timeline-node">
+            <div class="t-node-num">1</div>
+            <div class="t-node-content">
+              <i data-lucide="video" class="t-node-icon"></i>
+              <h4>1. Kamera Mengirim Sinyal</h4>
+              <p>Kamera CCTV eksisting Anda mengirimkan video streaming via RTSP ke server tanpa perlu kabel baru.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="t-node-num">2</div>
+            <div class="t-node-content">
+              <i data-lucide="cpu" class="t-node-icon"></i>
+              <h4>2. AI Menganalisis Frame</h4>
+              <p>Engine YOLOv8 memeriksa objek dalam 4.2 milidetik: apakah itu manusia, mobil, atau sepeda motor?</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="t-node-num">3</div>
+            <div class="t-node-content">
+              <i data-lucide="hash" class="t-node-icon"></i>
+              <h4>3. Kunci Track ID Unik</h4>
+              <p>DeepSORT mengunci objek (#1205) agar saat berpindah posisi, objek tidak terhitung berkali-kali.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="t-node-num">4</div>
+            <div class="t-node-content">
+              <i data-lucide="scan-text" class="t-node-icon"></i>
+              <h4>4. Baca Plat & Wajah</h4>
+              <p>Jika terdeteksi mobil, OCR membaca plat nomornya. Jika orang, sistem mengaburkan wajahnya.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node highlight-node">
+            <div class="t-node-num">5</div>
+            <div class="t-node-content">
+              <i data-lucide="bell-ring" class="t-node-icon"></i>
+              <h4>5. Beri Tahu & Catat Log</h4>
+              <p>Alarm berbunyi jika melanggar batas. Foto bukti tersimpan di database dan tampil di dashboard.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card-soft mt-3">
+          <div class="quote-callout">
+            <i data-lucide="quote"></i>
+            <p><em>"Petugas kami kini merasa sangat terbantu. Mereka tidak perlu lagi memelototi monitor tanpa henti. Cukup menunggu notifikasi dari XTUR, dan tindakan pencegahan bisa langsung diambil."</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 5</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 6: GALERI DASHBOARD ==================== -->
+    <section id="dashboard" class="presentation-slide" data-slide-title="Antarmuka Dasbor yang Nyaman">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 06: PUSAT PEMANTAUAN</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="layout-dashboard"></i> PENGALAMAN PENGGUNA</div>
+        <h2 class="section-heading">Antarmuka Pemantauan: Ramah & Jelas</h2>
+        <p class="section-subtext">Dirancang agar mudah dipahami oleh siapa saja, baik staf keamanan pemula maupun pimpinan operasional yang butuh gambaran cepat.</p>
+      </div>
+
+      <div class="slide-content">
+        <!-- Dashboard Tabs -->
+        <div class="dashboard-tabs-nav no-print">
+          <button class="dash-tab-btn active" data-target="tab-overview">
+            <i data-lucide="layout-grid"></i> 1. Ringkasan Utama (Overview)
+          </button>
+          <button class="dash-tab-btn" data-target="tab-cameras">
+            <i data-lucide="video"></i> 2. Pemantau Multi-Kamera
+          </button>
+          <button class="dash-tab-btn" data-target="tab-logs">
+            <i data-lucide="file-search"></i> 3. Buku Log Kejadian
+          </button>
+          <button class="dash-tab-btn" data-target="tab-reports">
+            <i data-lucide="bar-chart"></i> 4. Laporan & Pola Kunjungan
+          </button>
+        </div>
+
+        <!-- Tab 1: Overview -->
+        <div id="tab-overview" class="dash-tab-content active">
+          <div class="showcase-box">
+            <div class="showcase-img-pane image-zoomable" data-img="assets/images/01-dashboard-overview.png" data-caption="Halaman Ringkasan (Overview): Memberikan pandangan menyeluruh mengenai status 4 kamera aktif, jumlah orang (1.134), mobil (349), motor (244), dan puncak kesibukan harian.">
+              <img src="assets/images/01-dashboard-overview.png" alt="Overview Dashboard XTUR">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <div class="showcase-text-pane">
+              <span class="sub-badge green"><i data-lucide="check"></i> Status Operasional Normal</span>
+              <h3>Overview: Semua Informasi Kunci Sekilas Pandang</h3>
+              <p>Begitu masuk ke aplikasi, Anda langsung disambut dengan kartu status yang menyejukkan: berapa kamera yang sehat, grafik perbandingan deteksi orang dan kendaraan, serta jam sibuk fasilitas Anda.</p>
+              
+              <ul class="bullet-highlight">
+                <li><strong>Statistik Harian:</strong> 1.734 tangkapan terverifikasi dengan puncak keramaian pada 8 September.</li>
+                <li><strong>Pembedaan Rapi:</strong> Warna khusus untuk Orang (Pink/Ungu), Mobil (Biru), Motor (Kuning), dan Truk (Hijau).</li>
+                <li><strong>Tanpa Istilah Rumit:</strong> Semua angka disajikan dengan bahasa Indonesia yang terang benderang.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Cameras -->
+        <div id="tab-cameras" class="dash-tab-content">
+          <div class="showcase-box">
+            <div class="showcase-img-pane image-zoomable" data-img="assets/images/03-cameras-monitor.png" data-caption="Manajemen Kamera: Memantau 4 titik live stream (J30B, A5, Samping, Depan) dengan pengaturan kelas deteksi terpisah per lokasi.">
+              <img src="assets/images/03-cameras-monitor.png" alt="Cameras Monitoring XTUR">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <div class="showcase-text-pane">
+              <span class="sub-badge blue"><i data-lucide="video"></i> Dual-Stream Ringan</span>
+              <h3>Multi-Camera Wall: Pantau Setiap Sudut Tanpa Lemot</h3>
+              <p>Menampilkan kisi-kisi video dari kamera Depan, Samping, J30B, dan A5 secara serentak. Berkat teknologi <em>Dual Stream</em>, kuota internet Anda tetap hemat dan laptop pemantau tidak terasa berat.</p>
+              
+              <ul class="bullet-highlight">
+                <li><strong>Fleksibilitas Tiap Kamera:</strong> Kamera gerbang disetel mendeteksi mobil & plat nomor; kamera lobi disetel mendeteksi orang.</li>
+                <li><strong>Status Jaringan Jelas:</strong> Indikator hijau "Online" memudahkan pengecekan kamera yang terputus kabelnya.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Logs -->
+        <div id="tab-logs" class="dash-tab-content">
+          <div class="showcase-box">
+            <div class="showcase-img-pane image-zoomable" data-img="assets/images/02-detection-logs.png" data-caption="Buku Log Deteksi: Riwayat deteksi dengan thumbnail foto asli, Track ID, nilai akurasi (Confidence Bar), dan opsi koreksi oleh petugas.">
+              <img src="assets/images/02-detection-logs.png" alt="Detection Logs XTUR">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <div class="showcase-text-pane">
+              <span class="sub-badge amber"><i data-lucide="clipboard-list"></i> Kejadian Terekam Transparan</span>
+              <h3>Detection Logs: Buku Tamu Digital yang Tak Pernah Lupa</h3>
+              <p>Setiap mobil dan pejalan kaki yang melintas langsung tersimpan dalam daftar rapi beserta foto cuplikannya, waktu presisi, dan nama kamera pengambilnya.</p>
+              
+              <ul class="bullet-highlight">
+                <li><strong>Tingkat Keyakinan Jelas:</strong> Menampilkan skor akurasi (misal 89.5% untuk Mobil #1205).</li>
+                <li><strong>Petugas Bisa Mengoreksi:</strong> Ada tombol "Incorrect" jika petugas ingin memberi tahu sistem bahwa objek tersebut keliru, sehingga AI semakin pintar dari hari ke hari.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Reports -->
+        <div id="tab-reports" class="dash-tab-content">
+          <div class="showcase-box">
+            <div class="showcase-img-pane image-zoomable" data-img="assets/images/04-reports-analytics-top.png" data-caption="Laporan & Analitik CCTV: Grafik gelombang lalu lintas, rasio kendaraan vs pejalan kaki, dan akurasi rata-rata 78.7%.">
+              <img src="assets/images/04-reports-analytics-top.png" alt="Reports & Analytics XTUR">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <div class="showcase-text-pane">
+              <span class="sub-badge green"><i data-lucide="trending-up"></i> Wawasan Bisnis Nyata</span>
+              <h3>Laporan & Analitik: Data Bermanfaat untuk Keputusan Cepat</h3>
+              <p>Bukan sekadar keamanan. Data ini membantu manajemen menentukan kapan harus membuka pintu tambahan, kapan jam istirahat paling padat, dan berapa rata-rata kendaraan yang berkunjung setiap harinya.</p>
+              
+              <ul class="bullet-highlight">
+                <li><strong>Ekspor Excel & PDF:</strong> Satu kali klik tombol untuk menyertakan grafik dalam rapat mingguan pimpinan.</li>
+                <li><strong>Penyaringan Lengkap:</strong> Bisa memfilter berdasarkan tanggal kemarin, minggu ini, atau bulan lalu.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="print-page-number">Halaman 6</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 7: ANALISIS LANJUTAN ==================== -->
+    <section id="analisis" class="presentation-slide" data-slide-title="Wawasan Jam Sibuk & Wilayah">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 07: KEPADATAN & DEMOGRAFI</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="pie-chart"></i> KECERDASAN FASILITAS</div>
+        <h2 class="section-heading">Memahami Pola Kunjungan & Asal Tamu</h2>
+        <p class="section-subtext">Mengubah jutaan frame video menjadi wawasan berharga untuk meningkatkan kenyamanan pengunjung fasilitas Anda.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="showcase-box">
+          <div class="showcase-img-pane image-zoomable" data-img="assets/images/05-reports-analytics-bottom.png" data-caption="Analisis Lanjutan: Grafik jam sibuk 24 jam, demografi pejalan kaki, peringkat asal wilayah plat nomor kendaraan, dan persentase volume tiap kamera.">
+            <img src="assets/images/05-reports-analytics-bottom.png" alt="Analisis Jam Sibuk & Wilayah XTUR">
+            <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+          </div>
+          <div class="showcase-text-pane">
+            <span class="sub-badge blue"><i data-lucide="map-pin"></i> Intelijen Operasional</span>
+            <h3>Pola Jam Sibuk, Demografi & Asal Wilayah</h3>
+            <p>Laporan ini menjawab pertanyaan krusial pengelola gedung atau kawasan industri dengan bukti nyata:</p>
+            
+            <div class="insight-cards-list">
+              <div class="ic-item">
+                <i data-lucide="clock" class="ic-icon"></i>
+                <div>
+                  <strong>Grafik Jam Sibuk 24 Jam:</strong>
+                  <p>Mengetahui jam-jam krusial di mana arus kendaraan paling padat untuk penjadwalan buka-tutup palang pintu otomatis.</p>
+                </div>
+              </div>
+              <div class="ic-item">
+                <i data-lucide="car" class="ic-icon"></i>
+                <div>
+                  <strong>Asal Wilayah Terbanyak:</strong>
+                  <p>Mencatat kendaraan terbanyak berasal dari Karawang/Purwakarta (11 unit), Banten/Tangerang (4 unit), dan Garut/Tasikmalaya (2 unit).</p>
+                </div>
+              </div>
+              <div class="ic-item">
+                <i data-lucide="video" class="ic-icon"></i>
+                <div>
+                  <strong>Distribusi Beban Titik Pantau:</strong>
+                  <p>Kamera J30B menangani 33% aktivitas, Samping 27%, Depan 24%, dan A5 16%.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 7</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 8: KESEHATAN SERVER ==================== -->
+    <section id="telemetri" class="presentation-slide" data-slide-title="Keandalan Server & Pengaturan">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 08: TELEMETRI & KONTROL</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="activity"></i> KEANDALAN TEKNIS</div>
+        <h2 class="section-heading">Kesehatan Server Terbuka & Mudah Diatur</h2>
+        <p class="section-subtext">Kami tidak menyembunyikan kinerja sistem. Anda dapat memantau beban prosesor dan menyetel sensitivitas AI semudah menggeser tombol.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="showcase-box">
+          <div class="showcase-img-pane image-zoomable" data-img="assets/images/06-engine-health.png" data-caption="Halaman Engine Health & Resource: Pemantau langsung beban CPU (21%), pemakaian RAM (53%), kapasitas buffer Redis, dan latensi inferensi 4.2 ms.">
+            <img src="assets/images/06-engine-health.png" alt="Engine Health XTUR">
+            <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+          </div>
+          <div class="showcase-text-pane">
+            <span class="sub-badge green"><i data-lucide="check-circle-2"></i> Sistem Berjalan Sehat</span>
+            <h3>Engine Health: Kepastian Bahwa Server Anda Dingin & Aman</h3>
+            <p>Sistem pengawasan cerdas tidak boleh membuat komputer Anda kepanasan. XTUR dirancang dengan arsitektur efisien yang memanfaatkan akselerasi GPU secara optimal:</p>
+            
+            <div class="telemetry-compact-grid">
+              <div class="tc-card">
+                <span class="tc-val">21%</span>
+                <span class="tc-lbl">Beban CPU Host (i7-14700F)</span>
+              </div>
+              <div class="tc-card">
+                <span class="tc-val">8.04 GB</span>
+                <span class="tc-lbl">Penggunaan RAM (53%)</span>
+              </div>
+              <div class="tc-card">
+                <span class="tc-val">4.2 ms</span>
+                <span class="tc-lbl">Kecepatan Inferensi AI</span>
+              </div>
+              <div class="tc-card">
+                <span class="tc-val">0 ms</span>
+                <span class="tc-lbl">Ping Database PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Preview Grid -->
+        <div class="grid-2-col mt-3">
+          <div class="card-soft">
+            <div class="image-zoomable" data-img="assets/images/07-detection-settings-1.png" data-caption="Pengaturan Deteksi: Aktifkan Manusia, Mobil, Motor, Bus, Truk, serta toggle DeepSORT dan Privacy Blur Wajah.">
+              <img src="assets/images/07-detection-settings-1.png" alt="Detection Settings 1" class="rounded-preview">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <h4 class="mt-2 text-primary font-semibold">Pilih Objek Sesuai Kebutuhan</h4>
+            <p class="text-sm">Matikan deteksi motor jika kamera terpasang di koridor dalam kantor. Sangat hemat daya dan mencegah notifikasi yang tidak relevan.</p>
+          </div>
+
+          <div class="card-soft">
+            <div class="image-zoomable" data-img="assets/images/08-detection-settings-2.png" data-caption="Pengaturan Laju Frame: Rekomendasi optimal 5 FPS untuk GPU RTX dan pengaktifan OCR pembaca plat nomor.">
+              <img src="assets/images/08-detection-settings-2.png" alt="Detection Settings 2" class="rounded-preview">
+              <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+            </div>
+            <h4 class="mt-2 text-primary font-semibold">Toleransi Sensitivitas Fleksibel</h4>
+            <p class="text-sm">Tersedia pengatur ambang keyakinan (Confidence Threshold 75%) dan laju ekstraksi frame 5 FPS yang menjaga kestabilan perangkat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 8</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 9: DATABASE PLAT NOMOR ==================== -->
+    <section id="alpr" class="presentation-slide" data-slide-title="Database Plat Nomor Seluruh Indonesia">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 09: PETA WILAYAH KENDARAAN</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="map"></i> KODIFIKASI NASIONAL</div>
+        <h2 class="section-heading">Mengenal Kendaraan Tamu dari Seluruh Nusantara</h2>
+        <p class="section-subtext">XTUR telah diprogram dengan pangkalan data lengkap plat nomor Indonesia dari Sabang sampai Merauke.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="showcase-box">
+          <div class="showcase-img-pane image-zoomable" data-img="assets/images/09-plate-regions-db.png" data-caption="Database Plat Nomor: Katalog 57 kode wilayah pendaftaran kendaraan di Indonesia (Jawa: 21, Sumatera: 11, Kalimantan + Lainnya: 24).">
+            <img src="assets/images/09-plate-regions-db.png" alt="Database Plat Nomor XTUR">
+            <div class="img-overlay-hint no-print"><i data-lucide="zoom-in"></i> Klik untuk memperbesar</div>
+          </div>
+          <div class="showcase-text-pane">
+            <span class="sub-badge amber"><i data-lucide="credit-card"></i> 57 Kode Wilayah Terdaftar</span>
+            <h3>Bukan Cuma Huruf, Tapi Tahu Asal Daerahnya</h3>
+            <p>Begitu sebuah mobil masuk gerbang dan terdeteksi plat berawalan <strong>"AD"</strong>, sistem langsung mengenali bahwa kendaraan tersebut berasal dari <strong>Solo Raya (Surakarta, Sukoharjo, Klaten, Boyolali, Karanganyar, Wonogiri, Sragen)</strong>.</p>
+            
+            <div class="plate-summary-chips">
+              <span class="chip-item">Jawa & Bali: 21 Kode</span>
+              <span class="chip-item">Sumatera: 11 Kode</span>
+              <span class="chip-item">Kalimantan & Lainnya: 24 Kode</span>
+            </div>
+
+            <p class="text-sm mt-2">Sangat ideal untuk pengawasan gerbang bea cukai pelabuhan, jalan tol, kawasan pergudangan logistik, dan pintu masuk perumahan elite.</p>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 9</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 10: MANFAAT EKONOMIS & ROI ==================== -->
+    <section id="roi" class="presentation-slide" data-slide-title="Penghematan Anggaran & Nilai Investasi">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 10: ANALISIS INVESTASI (ROI)</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="calculator"></i> EFISIENSI BIAYA</div>
+        <h2 class="section-heading">Investasi Cerdas yang Mengembalikan Modal Anda</h2>
+        <p class="section-subtext">Berapa banyak biaya yang dapat dihemat oleh organisasi Anda jika pengawasan dibantu oleh AI?</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-3-col">
+          <div class="card-soft">
+            <div class="card-icon-header green"><i data-lucide="trending-down"></i></div>
+            <h4>Penghematan Jam Kerja</h4>
+            <p>Pencarian insiden berkurang dari 2 jam menjadi 2 detik. Tim Anda bisa mengerjakan tugas pelayanan lainnya yang lebih produktif.</p>
+          </div>
+
+          <div class="card-soft">
+            <div class="card-icon-header blue"><i data-lucide="shield-check"></i></div>
+            <h4>Cegah Kehilangan Sebelum Terjadi</h4>
+            <p>Satu kali insiden pencurian material atau barang gudang yang digagalkan oleh alarm dini dapat langsung menutupi seluruh biaya investasi sistem.</p>
+          </div>
+
+          <div class="card-soft">
+            <div class="card-icon-header purple"><i data-lucide="repeat"></i></div>
+            <h4>Memperpanjang Umur Kamera Lama</h4>
+            <p>Tidak perlu merombak instalasi kabel atau mengganti unit kamera lama. Cukup pasang server XTUR dan hubungkan ke jaringan CCTV yang ada.</p>
+          </div>
+        </div>
+
+        <!-- Interactive ROI Calculator (Interactive on Web, Clean Table on Print/PDF) -->
+        <div class="roi-container-box mt-4">
+          <div class="roi-header">
+            <div>
+              <h3 class="text-primary font-bold"><i data-lucide="calculator"></i> Simulasi Penghematan Operasional Anda</h3>
+              <p class="text-sm">Geser nilai di bawah ini untuk melihat perkiraan efisiensi anggaran per tahun:</p>
+            </div>
+            <span class="badge-roi">Kalkulator Interaktif</span>
+          </div>
+
+          <div class="roi-interactive-grid no-print">
+            <div class="roi-input-field">
+              <label>Jumlah Kamera CCTV Anda:</label>
+              <input type="range" id="calcCams" min="4" max="64" value="16" step="2" oninput="updateROI()">
+              <span id="calcCamsVal" class="slider-tag">16 Titik Kamera</span>
+            </div>
+            <div class="roi-input-field">
+              <label>Jumlah Staf Pemantau Saat Ini:</label>
+              <input type="range" id="calcStaff" min="1" max="15" value="4" step="1" oninput="updateROI()">
+              <span id="calcStaffVal" class="slider-tag">4 Orang Petugas</span>
+            </div>
+            <div class="roi-result-field">
+              <span class="r-caption">Estimasi Penghematan Operasional:</span>
+              <span id="calcSavings" class="r-highlight">Rp 132.000.000 / tahun</span>
+              <span class="r-sub">*Berdasarkan efisiensi shift jaga dan kecepatan penanganan insiden</span>
+            </div>
+          </div>
+
+          <!-- Printable static table for PDF -->
+          <div class="print-only-roi mt-2">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Skala Fasilitas</th>
+                  <th>Kamera</th>
+                  <th>Estimasi Efisiensi Waktu Investigasi</th>
+                  <th>Perkiraan Nilai Penghematan Operasional</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Usaha Menengah / Kantor</td>
+                  <td>4 – 8 Kamera</td>
+                  <td>85% Lebih Cepat</td>
+                  <td>Rp 45.000.000 – Rp 65.000.000 / tahun</td>
+                </tr>
+                <tr>
+                  <td>Pabrik / Kawasan Pergudangan</td>
+                  <td>16 – 32 Kamera</td>
+                  <td>92% Lebih Cepat</td>
+                  <td>Rp 120.000.000 – Rp 240.000.000 / tahun</td>
+                </tr>
+                <tr>
+                  <td>Smart City / Kawasan Industri</td>
+                  <td>64+ Kamera</td>
+                  <td>96% Lebih Cepat</td>
+                  <td>Rp 450.000.000+ / tahun</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 10</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 11: IMPLEMENTASI SEKTOR ==================== -->
+    <section id="sektor" class="presentation-slide" data-slide-title="Cocok Untuk Berbagai Industri">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 11: SEKTOR PENERAPAN</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="building-2"></i> PENGGUNAAN NYATA</div>
+        <h2 class="section-heading">Solusi yang Tepat di Mana Pun Anda Berada</h2>
+        <p class="section-subtext">Dari pabrik manufaktur yang sibuk hingga sekolah dan rumah sakit yang tenang, XTUR menyesuaikan dengan kebutuhan Anda.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="sector-cards-grid">
+          
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="factory"></i> <h4>Pabrik & Manufaktur</h4></div>
+            <p>Mencegah orang masuk ke zona mesin bergerak dan memastikan truk pengirim material tercatat dengan tepat.</p>
+          </div>
+
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="warehouse"></i> <h4>Gudang & Logistik</h4></div>
+            <p>Mengawasi area bongkar muat saat malam hari dan membaca plat nomor armada ekspedisi yang keluar-masuk.</p>
+          </div>
+
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="building"></i> <h4>Perkantoran & Mall</h4></div>
+            <p>Membantu menghitung jumlah pengunjung harian dan mengenali orang mencurigakan yang berdiam terlalu lama (loitering).</p>
+          </div>
+
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="hospital"></i> <h4>Rumah Sakit</h4></div>
+            <p>Menjaga koridor gawat darurat tetap bebas dari parkir liar dan membatasi akses ruangan obat-obatan penting.</p>
+          </div>
+
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="home"></i> <h4>Kawasan Perumahan</h4></div>
+            <p>Memberikan ketenangan bagi warga: portal otomatis mengenali mobil warga dan mencatat plat kendaraan tamu asing.</p>
+          </div>
+
+          <div class="sector-item">
+            <div class="s-head"><i data-lucide="landmark"></i> <h4>Instansi Pemerintah</h4></div>
+            <p>Mendukung inisiatif Smart City dengan pemetaan volume lalu lintas dan audit transparan tanpa melanggar privasi masyarakat.</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 11</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 12: PANDUAN SPESIFIKASI ==================== -->
+    <section id="spesifikasi" class="presentation-slide" data-slide-title="Kebutuhan Spesifikasi & Pemasangan">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 12: SPESIFIKASI TEKNIS</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="wrench"></i> SPESIFIKASI SISTEM</div>
+        <h2 class="section-heading">Spesifikasi Sistem</h2>
+        <p class="section-subtext">Performa Optimal untuk Keamanan Maksimal — Dirancang untuk keandalan 24/7 pada server komersial standar.</p>
+      </div>
+
+      <div class="slide-content">
+        <!-- 9 Specification Items Matching Flyer Exactly -->
+        <div class="poster-specs-grid mb-4">
+          
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="video"></i></div>
+            <div class="p-spec-content">
+              <h4>CCTV IP Camera</h4>
+              <p>RTSP / ONVIF Compatible (2MP / 4MP / 8MP)</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="cpu"></i></div>
+            <div class="p-spec-content">
+              <h4>Server GPU</h4>
+              <p>NVIDIA GPU (Minimal RTX 3060) atau setara</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="microchip"></i></div>
+            <div class="p-spec-content">
+              <h4>CPU</h4>
+              <p>Intel i7 / AMD Ryzen 7 (Minimum)</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="memory-stick"></i></div>
+            <div class="p-spec-content">
+              <h4>RAM</h4>
+              <p>16 GB (Minimum)</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="hard-drive"></i></div>
+            <div class="p-spec-content">
+              <h4>Storage</h4>
+              <p>SSD 512 GB (Minimum) (Disesuaikan kebutuhan)</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="network"></i></div>
+            <div class="p-spec-content">
+              <h4>Network</h4>
+              <p>LAN / Internet (Minimal 100 Mbps)</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="terminal"></i></div>
+            <div class="p-spec-content">
+              <h4>Sistem Operasi</h4>
+              <p>Ubuntu 20.04+ / Windows 10/11</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="database"></i></div>
+            <div class="p-spec-content">
+              <h4>Database</h4>
+              <p>PostgreSQL / MySQL</p>
+            </div>
+          </div>
+
+          <div class="p-spec-card">
+            <div class="p-spec-icon-box"><i data-lucide="globe"></i></div>
+            <div class="p-spec-content">
+              <h4>Web Browser</h4>
+              <p>Chrome / Firefox / Edge</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="table-responsive">
+          <table class="modern-table">
+            <thead>
+              <tr>
+                <th>Komponen Hardware</th>
+                <th>Paket Esensial (4 – 8 Kamera)</th>
+                <th>Paket Standar (16 – 32 Kamera)</th>
+                <th>Hasil Uji Nyata Server XTUR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Prosesor (CPU)</strong></td>
+                <td>Intel Core i5 (Gen 12) / AMD Ryzen 5</td>
+                <td>Intel Core i7 (Gen 14) / AMD Ryzen 9</td>
+                <td><span class="badge-tech">Intel Core i7-14700F (16 Cores)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Kartu Grafis (GPU)</strong></td>
+                <td>NVIDIA GTX 1660 Ti / RTX 3050 (6GB)</td>
+                <td>NVIDIA RTX 4060 Ti / RTX 4070 (8–12GB)</td>
+                <td><span class="badge-tech">NVIDIA CUDA Dedicated</span></td>
+              </tr>
+              <tr>
+                <td><strong>Memori (RAM)</strong></td>
+                <td>16 GB DDR4</td>
+                <td>32 GB DDR5</td>
+                <td><span class="badge-tech">15.11 GB (Beban Aktif: 8.04 GB)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Penyimpanan</strong></td>
+                <td>512 GB SSD (Sistem) + 2 TB HDD</td>
+                <td>1 TB NVMe SSD + 4–8 TB HDD</td>
+                <td><span class="badge-tech">Redis Stream Buffer 22 MB</span></td>
+              </tr>
+              <tr>
+                <td><strong>Kamera CCTV</strong></td>
+                <td>Semua IP Cam berspesifikasi RTSP/ONVIF</td>
+                <td>Kamera Full HD / 2K Onvif H.264/H.265</td>
+                <td><span class="badge-tech">Rate Limited 5 FPS (200 ms)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4 Steps Onboarding -->
+        <div class="onboarding-flow-box mt-3">
+          <h4 class="font-bold text-primary mb-2"><i data-lucide="calendar"></i> 4 Langkah Mudah Menuju Pengawasan Cerdas (Selesai dalam 10 Hari)</h4>
+          <div class="onboarding-grid">
+            <div class="ob-step">
+              <span class="ob-badge">Langkah 1</span>
+              <strong>Survei & Cek Kamera Lama</strong>
+              <p>Tim kami memeriksa alamat RTSP kamera eksisting Anda.</p>
+            </div>
+            <div class="ob-step">
+              <span class="ob-badge">Langkah 2</span>
+              <strong>Pemasangan Server & AI</strong>
+              <p>Server diatur dengan ambang deteksi dan database plat.</p>
+            </div>
+            <div class="ob-step">
+              <span class="ob-badge">Langkah 3</span>
+              <strong>Uji Coba Lapangan (UAT)</strong>
+              <p>Memastikan alarm dan foto bukti terkirim dengan akurat.</p>
+            </div>
+            <div class="ob-step success-step">
+              <span class="ob-badge green">Langkah 4</span>
+              <strong>Pelatihan Tim & Siap Pakai</strong>
+              <p>Petugas diajari cara membaca dasbor dalam 30 menit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 12</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 13: KESIMPULAN & KONTAK ==================== -->
+    <section id="kesimpulan" class="presentation-slide cover-slide closing-slide" data-slide-title="Langkah Berikutnya Bersama Kami">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 13: KESIMPULAN & KONTAK</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-content text-center max-w-4xl mx-auto">
+        <div class="tech-pill-tag mx-auto">
+          <i data-lucide="shield-check"></i> Siap Menghadirkan Ketenangan Bersama Anda
+        </div>
+        
+        <h2 class="closing-title">
+          Mari Wujudkan Lingkungan yang Lebih <span>Aman, Nyaman, dan Terlindungi</span>
+        </h2>
+        
+        <p class="closing-desc">
+          Teknologi terbaik adalah teknologi yang membuat manusia merasa lebih tenang dan terbantu. Tim kami di <strong>CV Maudy Network Komunikasi</strong> siap mendampingi organisasi Anda melakukan uji coba langsung (*Proof of Concept*) tanpa mengganggu sistem CCTV yang sedang berjalan.
+        </p>
+
+        <div class="closing-cta-box no-print">
+          <button class="btn-glow large" onclick="window.print()">
+            <i data-lucide="file-down"></i> Simpan Dokumen Ini (PDF Rapi)
+          </button>
+          <button class="btn-outline large" onclick="exportToPowerPoint()">
+            <i data-lucide="download"></i> Unduh Berkas Presentasi (.PPTX)
+          </button>
+        </div>
+
+        <div class="contact-card-modern">
+          <div class="contact-cell">
+            <i data-lucide="building" class="c-icon"></i>
+            <div>
+              <strong>CV Maudy Network Komunikasi</strong>
+              <p>Penyedia Solusi AI Vision Surveillance Indonesia</p>
+            </div>
+          </div>
+          <div class="contact-cell">
+            <i data-lucide="globe" class="c-icon"></i>
+            <div>
+              <strong>Akses Platform:</strong>
+              <p><a href="https://xtur.exac.site" target="_blank">xtur.exac.site</a></p>
+            </div>
+          </div>
+          <div class="contact-cell">
+            <i data-lucide="mail" class="c-icon"></i>
+            <div>
+              <strong>Konsultasi & Uji Coba (POC):</strong>
+              <p>contact@maudy.network | support@xtur.exac.site</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-legal">
+          <p>© 2026 CV Maudy Network Komunikasi. Seluruh hak cipta dilindungi undang-undang. Dokumen profil produk ini disiapkan untuk mitra dan calon klien enterprise.</p>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 13</div>
+    </section>
+
+  </main>
+
+  <!-- Image Modal / Lightbox -->
+  <div id="imageLightbox" class="lightbox-modal no-print hidden">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" title="Tutup (Esc)"><i data-lucide="x"></i></button>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Screenshot Full View">
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption">
+        Caption keterangan gambar
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast-popup no-print hidden">
+    <i data-lucide="check-circle" id="toastIcon"></i>
+    <span id="toastMsg">Pesan notifikasi</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

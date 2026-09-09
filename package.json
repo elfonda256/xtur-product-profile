@@ -1,0 +1,20 @@
+{
+  "name": "xtur-product-profile",
+  "version": "1.0.0",
+  "description": "Aplikasi web interaktif **Product Profile** resmi untuk **XTUR AI Vision Surveillance Platform**, yang dirancang dengan standar desain perusahaan teknologi modern, mencakup seluruh analisis teknis, telemetri live, perbandingan arsitektur, dan integrasi screenshot sistem yang telah Anda sediakan.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "pdfkit": "^0.20.2",
+    "pptxgenjs": "^4.0.1"
+  }
+}
