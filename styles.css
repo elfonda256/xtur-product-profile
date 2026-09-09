@@ -3432,48 +3432,243 @@ body.theme-light .bg-glow-orb.orb-4 {
 }
 
 /* --------------------------------------------------------------------------
-   INDUSTRY SOLUTION CATALOG (KATALOG SEKTOR)
+   INDUSTRY & HARDWARE SOLUTION CATALOG (KATALOG SEKTOR & KAMERA)
    -------------------------------------------------------------------------- */
+.katalog-nav-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.katalog-filter-btn {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--bg-card-border);
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+}
+
+.katalog-filter-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.katalog-filter-btn:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.katalog-filter-btn.active {
+  background: linear-gradient(135deg, #1e40af, #0284c7);
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+/* Subgroup Header Blocks */
+.katalog-subgroup-block {
+  transition: opacity 0.3s ease;
+}
+
+.katalog-subgroup-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bg-card-border);
+}
+
+.katalog-subgroup-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+.katalog-group-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.katalog-group-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.katalog-group-icon.cyan {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0284c7;
+}
+
+.katalog-group-icon.blue {
+  background: rgba(30, 64, 175, 0.12);
+  color: #1e40af;
+}
+
+body.theme-dark .katalog-group-icon.cyan {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+}
+
+body.theme-dark .katalog-group-icon.blue {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.katalog-subgroup-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.katalog-subgroup-badge.cyan {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+.katalog-subgroup-badge.blue {
+  background: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+}
+
+body.theme-dark .katalog-subgroup-badge.cyan {
+  background: rgba(56, 189, 248, 0.18);
+  color: #7dd3fc;
+}
+
+body.theme-dark .katalog-subgroup-badge.blue {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+.katalog-subgroup-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.katalog-subgroup-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 4px 0 0 0;
+}
+
+/* Katalog Grid & Cards */
 .katalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 1.5rem;
+  gap: 24px;
 }
 
 .katalog-card {
   background: var(--bg-surface);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-smooth);
   box-shadow: var(--shadow-sm);
   position: relative;
+  overflow: hidden;
 }
 
 .katalog-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: 0 16px 30px -8px rgba(2, 132, 199, 0.18);
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 18px 36px -10px rgba(2, 132, 199, 0.22);
 }
 
 .katalog-card.highlight-katalog {
-  border-color: rgba(245, 158, 11, 0.45);
-  background: linear-gradient(to bottom, var(--bg-surface), var(--bg-surface-elevated));
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+}
+
+/* Card Media / Thumbnail */
+.katalog-card-media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #0f172a;
+  cursor: zoom-in;
+}
+
+.katalog-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.katalog-card:hover .katalog-card-media img {
+  transform: scale(1.06);
+}
+
+.katalog-media-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.katalog-media-tag.cyan { background: #0284c7; color: #fff; }
+.katalog-media-tag.amber { background: #d97706; color: #fff; }
+.katalog-media-tag.purple { background: #7c3aed; color: #fff; }
+.katalog-media-tag.orange { background: #ea580c; color: #fff; }
+.katalog-media-tag.emerald { background: #059669; color: #fff; }
+.katalog-media-tag.blue { background: #1e40af; color: #fff; }
+.katalog-media-tag.rose { background: #e11d48; color: #fff; }
+
+/* Card Body Content */
+.katalog-card-body {
+  padding: 1.35rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .katalog-card-header {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 0.85rem;
 }
 
 .katalog-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -3482,8 +3677,8 @@ body.theme-light .bg-glow-orb.orb-4 {
 }
 
 .katalog-icon-wrap svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .katalog-icon-wrap.blue { background: rgba(30, 64, 175, 0.12); color: #1e40af; }
@@ -3501,9 +3696,10 @@ body.theme-dark .katalog-icon-wrap.rose { background: rgba(244, 63, 94, 0.2); co
 body.theme-dark .katalog-icon-wrap.purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
 
 .katalog-header-text h3 {
-  font-size: 1.12rem;
+  font-size: 1.14rem;
   font-weight: 700;
   line-height: 1.25;
+  color: var(--text-primary);
 }
 
 .katalog-badge {
@@ -3541,27 +3737,29 @@ body.theme-dark .katalog-badge.purple { background: rgba(139, 92, 246, 0.18); co
 .katalog-feature-tags {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   margin-bottom: 1.25rem;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background: var(--bg-surface-elevated);
   border-radius: var(--radius-sm);
   border: 1px solid var(--bg-card-border);
 }
 
 .katalog-feature-tags span {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   font-weight: 600;
   color: var(--text-primary);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+  line-height: 1.35;
 }
 
 .katalog-feature-tags span svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   color: #10b981;
+  flex-shrink: 0;
 }
 
 .katalog-spec-footer {
@@ -3570,7 +3768,7 @@ body.theme-dark .katalog-badge.purple { background: rgba(139, 92, 246, 0.18); co
   border-top: 1px dashed var(--bg-card-border);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .katalog-spec-item {
@@ -3578,6 +3776,8 @@ body.theme-dark .katalog-badge.purple { background: rgba(139, 92, 246, 0.18); co
   justify-content: space-between;
   align-items: center;
   font-size: 0.76rem;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .katalog-spec-item .lbl {
@@ -3607,15 +3807,17 @@ body.theme-dark .katalog-cta-box {
 }
 
 .katalog-cta-text h4 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: var(--text-primary);
 }
 
 .katalog-cta-text p {
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.5;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
@@ -3627,7 +3829,17 @@ body.theme-dark .katalog-cta-box {
 @media (max-width: 768px) {
   .katalog-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
+  }
+  .katalog-card-media {
+    height: 175px;
+  }
+  .katalog-nav-filters {
+    gap: 8px;
+  }
+  .katalog-filter-btn {
+    font-size: 0.78rem;
+    padding: 6px 12px;
   }
   .katalog-cta-box {
     flex-direction: column;

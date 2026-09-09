@@ -101,24 +101,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 7. SCREENSHOT LIGHTBOX MODAL
+  // 6B. KATALOG CATEGORY FILTER SWITCHER
   // --------------------------------------------------------------------------
-  const zoomableItems = document.querySelectorAll('.image-zoomable');
+  const katalogFilterBtns = document.querySelectorAll('.katalog-filter-btn');
+  const katalogGroupBlocks = document.querySelectorAll('.katalog-subgroup-block');
+
+  katalogFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      katalogFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterVal = btn.getAttribute('data-filter');
+      katalogGroupBlocks.forEach(block => {
+        const groupType = block.getAttribute('data-category-group');
+        if (filterVal === 'all' || filterVal === groupType) {
+          block.style.display = 'block';
+          block.style.animation = 'fadeIn 0.3s ease forwards';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  // 7. SCREENSHOT & CATALOG LIGHTBOX MODAL (UNIVERSAL DELEGATION)
+  // --------------------------------------------------------------------------
   const lightboxModal = document.getElementById('imageLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
 
-  zoomableItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const imgSrc = item.getAttribute('data-img');
-      const caption = item.getAttribute('data-caption') || 'Screenshot Hasil Tangkapan XTUR Platform';
+  document.addEventListener('click', (e) => {
+    const zoomable = e.target.closest('.image-zoomable');
+    if (zoomable) {
+      const imgSrc = zoomable.getAttribute('data-img') || zoomable.querySelector('img')?.src;
+      const caption = zoomable.getAttribute('data-caption') || zoomable.querySelector('img')?.alt || 'Pratinjau Katalog XTUR';
       
-      if (lightboxImg && lightboxCaption && lightboxModal) {
+      if (lightboxImg && lightboxCaption && lightboxModal && imgSrc) {
         lightboxImg.src = imgSrc;
-        lightboxCaption.innerHTML = `<strong>Tinjauan Forensik:</strong> ${caption}`;
+        lightboxCaption.innerHTML = `<strong>Tinjauan Forensik & Perangkat:</strong> ${caption}`;
         lightboxModal.classList.remove('hidden');
       }
-    });
+    }
   });
 
   window.closeLightbox = function() {
