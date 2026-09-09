@@ -50,13 +50,88 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) window.lucide.createIcons();
   }
 
-
-
-
-
-
-
   // --------------------------------------------------------------------------
+  // 2B. MOBILE NAVIGATION & DRAWER CONTROLLER
+  // --------------------------------------------------------------------------
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeMobileDrawerBtn = document.getElementById('closeMobileDrawerBtn');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+  const mobDrawerLinks = document.querySelectorAll('.mob-drawer-link');
+  const mobPills = document.querySelectorAll('.mob-pill');
+
+  function openMobileDrawer() {
+    if (mobileNavDrawer) {
+      mobileNavDrawer.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (window.lucide) window.lucide.createIcons();
+    }
+  }
+
+  function closeMobileDrawer() {
+    if (mobileNavDrawer) {
+      mobileNavDrawer.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', openMobileDrawer);
+  }
+
+  if (closeMobileDrawerBtn) {
+    closeMobileDrawerBtn.addEventListener('click', closeMobileDrawer);
+  }
+
+  if (mobileDrawerBackdrop) {
+    mobileDrawerBackdrop.addEventListener('click', closeMobileDrawer);
+  }
+
+  mobDrawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileDrawer();
+    });
+  });
+
+  // Active pill click tracking
+  mobPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      mobPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  // ScrollSpy to update active state of desktop and mobile pills
+  const trackedSections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let currentId = '';
+    const scrollPos = window.scrollY + 140;
+    
+    trackedSections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    if (currentId) {
+      mobPills.forEach(pill => {
+        const href = pill.getAttribute('href');
+        if (href === `#${currentId}`) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('.quick-nav .nav-link').forEach(nav => {
+        if (nav.getAttribute('href') === `#${currentId}`) {
+          nav.classList.add('active');
+        } else {
+          nav.classList.remove('active');
+        }
+      });
+    }
+  }, { passive: true });
   // 5B. DETECTION MATRIX CATEGORY FILTER CHIPS
   // --------------------------------------------------------------------------
   const detFilterChips = document.querySelectorAll('.det-chip-btn');

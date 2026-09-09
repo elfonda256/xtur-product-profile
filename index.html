@@ -56,9 +56,91 @@
         <button id="themeToggleBtn" class="action-icon-circle" title="Ganti Mode Terang / Gelap">
           <i data-lucide="moon" id="themeIcon"></i>
         </button>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button id="mobileMenuBtn" class="action-icon-circle mobile-only-btn" title="Buka Menu Navigasi" aria-label="Buka Menu Navigasi">
+          <i data-lucide="menu" id="mobileMenuIcon"></i>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Sticky Horizontal Scroll Navigation -->
+    <nav class="mobile-subnav-scroll" aria-label="Navigasi Cepat HP">
+      <a href="#cover" class="mob-pill active"><i data-lucide="home"></i> Beranda</a>
+      <a href="#tentang" class="mob-pill"><i data-lucide="shield-check"></i> Manfaat</a>
+      <a href="#fitur" class="mob-pill"><i data-lucide="crosshair"></i> Kemampuan AI</a>
+      <a href="#katalog" class="mob-pill"><i data-lucide="layers"></i> Katalog Solusi</a>
+      <a href="#dashboard" class="mob-pill"><i data-lucide="layout-dashboard"></i> Galeri Sistem</a>
+      <a href="#spesifikasi" class="mob-pill"><i data-lucide="cpu"></i> Spesifikasi</a>
+      <a href="#roi" class="mob-pill"><i data-lucide="calculator"></i> Kalkulator ROI</a>
+      <a href="#kontak" class="mob-pill"><i data-lucide="phone-call"></i> Kontak</a>
+    </nav>
   </header>
+
+  <!-- MOBILE NAV DRAWER OVERLAY -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer hidden no-print" aria-hidden="true">
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+    <div class="mobile-nav-drawer-panel">
+      <div class="mobile-drawer-header">
+        <div class="brand-block">
+          <div class="brand-logo-img-wrap">
+            <img src="assets/images/xtur-icon.png" alt="XTUR Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-name">
+            <span class="brand-name-x">X</span><span class="brand-name-tur">TUR</span>
+            <span class="brand-tag">VISION AI</span>
+          </div>
+        </div>
+        <button id="closeMobileDrawerBtn" class="action-icon-circle" aria-label="Tutup Menu">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <span class="drawer-section-label">NAVIGASI DOKUMEN</span>
+        <div class="mobile-drawer-links">
+          <a href="#cover" class="mob-drawer-link active">
+            <div class="drawer-link-left"><i data-lucide="home"></i> <span>Beranda</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#tentang" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="shield-check"></i> <span>Manfaat & Keunggulan</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#fitur" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="crosshair"></i> <span>Kemampuan AI & Deteksi</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#katalog" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="layers"></i> <span>Katalog Solusi & Kamera</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#dashboard" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="layout-dashboard"></i> <span>Galeri Sistem & Dasbor</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#spesifikasi" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="cpu"></i> <span>Spesifikasi Teknis</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#roi" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="calculator"></i> <span>Kalkulator Efisiensi Biaya</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+          <a href="#kontak" class="mob-drawer-link">
+            <div class="drawer-link-left"><i data-lucide="phone-call"></i> <span>Kontak & Konsultasi</span></div>
+            <i data-lucide="chevron-right" class="arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn-glow full-width">
+          <i data-lucide="message-square"></i> Hubungi WhatsApp Resmi
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- MAIN DOCUMENT CONTAINER -->
   <main id="mainContent" class="document-container">

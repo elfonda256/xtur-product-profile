@@ -274,9 +274,159 @@ p {
   color: var(--color-primary);
 }
 
+/* --------------------------------------------------------------------------
+   MOBILE NAVIGATION (SCROLLABLE BAR & SLIDE-OUT DRAWER)
+   -------------------------------------------------------------------------- */
+.mobile-only-btn {
+  display: none !important;
+}
 
+.mobile-subnav-scroll {
+  display: none !important;
+}
 
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+}
 
+.mobile-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.mobile-nav-drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 320px;
+  background: var(--bg-surface);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  animation: slideInDrawer 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInDrawer {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--bg-card-border);
+}
+
+.mobile-drawer-body {
+  padding: 1.25rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-section-label {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mob-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--bg-card-border);
+  transition: all var(--transition-fast);
+}
+
+.mob-drawer-link:hover,
+.mob-drawer-link.active {
+  background: rgba(2, 132, 199, 0.1);
+  border-color: #0284c7;
+  color: #0284c7;
+}
+
+.drawer-link-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-link-left svg {
+  width: 17px;
+  height: 17px;
+  color: #0284c7;
+}
+
+.mob-drawer-link .arrow {
+  width: 15px;
+  height: 15px;
+  color: var(--text-muted);
+}
+
+.mobile-drawer-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--bg-card-border);
+  background: var(--bg-surface-elevated);
+}
+
+.mob-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--bg-card-border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.mob-pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mob-pill:hover {
+  color: #0284c7;
+  border-color: #0284c7;
+}
+
+.mob-pill.active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
 
 .hidden { display: none !important; }
 
@@ -2370,13 +2520,22 @@ body.theme-dark .lightbox-caption {
 
 @media (max-width: 960px) {
   .quick-nav {
-    display: none;
+    display: none !important;
+  }
+  .mobile-only-btn {
+    display: flex !important;
+  }
+  .mobile-subnav-scroll {
+    display: flex !important;
+  }
+  .document-container {
+    padding-top: 110px !important;
   }
 }
 
 @media (max-width: 768px) {
   .quick-nav, .btn-text-hide-mobile {
-    display: none;
+    display: none !important;
   }
 
   .hero-title {
@@ -2847,6 +3006,14 @@ body.theme-dark .poster-footer-pill svg {
   }
   .presentation-slide {
     padding: 1.5rem 0.85rem 2rem 0.85rem;
+  }
+  .mobile-subnav-scroll {
+    padding: 6px 10px 8px;
+    gap: 6px;
+  }
+  .mob-pill {
+    padding: 4px 10px;
+    font-size: 0.74rem;
   }
   .brand-poster-badge {
     padding: 4px 10px;
