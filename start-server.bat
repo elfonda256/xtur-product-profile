@@ -5,5 +5,6 @@ echo   XTUR AI Vision Surveillance - Web Product Profile
 echo ========================================================
 echo Membuka browser di http://localhost:3456 ...
 start http://localhost:3456
-node server.js
+node local-server.js
 pause
+
