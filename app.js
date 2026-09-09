@@ -52,48 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // --------------------------------------------------------------------------
-  // 4. PRINT / PDF EXPORT CONTROLLER (DIRECT DOWNLOAD & BROWSER PRINT)
-  // --------------------------------------------------------------------------
-  const btnPrintPDF = document.getElementById('btnPrintPDF');
-  if (btnPrintPDF) {
-    btnPrintPDF.addEventListener('click', () => {
-      showToast('Mengunduh dokumen resmi PDF rapi...');
-      
-      // Trigger direct download of the pre-generated, perfectly formatted 10-page A4 PDF
-      const link = document.createElement('a');
-      link.href = '/exports/XTUR-AI-Surveillance-Product-Profile.pdf';
-      link.download = 'XTUR-AI-Surveillance-Product-Profile.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
 
-      // Also trigger print dialog after small delay if user wishes to print directly
-      setTimeout(() => {
-        if (confirm('Berkas PDF resmi telah diunduh. Apakah Anda juga ingin membuka dialog cetak (Print) sekarang?')) {
-          window.print();
-        }
-      }, 800);
-    });
-  }
-
-  // --------------------------------------------------------------------------
-  // 5. POWERPOINT (.PPTX) DIRECT DOWNLOAD & CLIENT FALLBACK
-  // --------------------------------------------------------------------------
-  const btnDownloadPPTX = document.getElementById('btnDownloadPPTX');
-  if (btnDownloadPPTX) btnDownloadPPTX.addEventListener('click', downloadPPTXFile);
-
-  function downloadPPTXFile() {
-    showToast('Mengunduh presentasi PowerPoint (.pptx)...');
-    const link = document.createElement('a');
-    link.href = '/exports/XTUR-AI-Surveillance-Product-Profile.pptx';
-    link.download = 'XTUR-AI-Surveillance-Product-Profile.pptx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
-  window.exportToPowerPoint = downloadPPTXFile;
 
 
 

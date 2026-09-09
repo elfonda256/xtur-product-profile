@@ -13,8 +13,6 @@
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- PptxGenJS for True Native PowerPoint (.pptx) Export -->
-  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -35,10 +33,13 @@
   <header class="app-header no-print">
     <div class="header-inner">
       <div class="brand-block">
-        <div class="brand-logo">
-          <i data-lucide="shield-check" class="brand-icon"></i>
+        <div class="brand-logo-img-wrap">
+          <img src="assets/images/xtur-icon.png" alt="XTUR Logo" class="brand-logo-img">
         </div>
-        <div class="brand-name">XTUR <span class="brand-tag">VISION AI</span></div>
+        <div class="brand-name">
+          <span class="brand-name-x">X</span><span class="brand-name-tur">TUR</span>
+          <span class="brand-tag">VISION AI</span>
+        </div>
       </div>
 
       <nav class="quick-nav">
@@ -55,16 +56,6 @@
         <button id="themeToggleBtn" class="action-icon-circle" title="Ganti Mode Terang / Gelap">
           <i data-lucide="moon" id="themeIcon"></i>
         </button>
-
-        <!-- Direct Downloads -->
-        <div class="export-actions-group">
-          <a href="/exports/XTUR-AI-Surveillance-Product-Profile.pdf" download="XTUR-AI-Surveillance-Product-Profile.pdf" id="btnPrintPDF" class="btn-chip-export pdf" title="Unduh Dokumen PDF Resmi A4">
-            <i data-lucide="file-down"></i> PDF
-          </a>
-          <a href="/exports/XTUR-AI-Surveillance-Product-Profile.pptx" download="XTUR-AI-Surveillance-Product-Profile.pptx" id="btnDownloadPPTX" class="btn-chip-export pptx" title="Unduh Berkas Asli PowerPoint 16:9">
-            <i data-lucide="download"></i> PPTX
-          </a>
-        </div>
       </div>
     </div>
   </header>
@@ -82,8 +73,13 @@
       <div class="slide-content cover-grid">
         <div class="cover-text-content">
           <div class="brand-poster-badge">
-            <span class="poster-logo-x">X</span><span class="poster-logo-tur">TUR</span>
-            <span class="poster-logo-sub">AI SECURITY MONITORING SYSTEM</span>
+            <img src="assets/images/xtur-icon.png" alt="XTUR Icon" class="hero-brand-logo-img">
+            <div class="poster-brand-text-block">
+              <div class="poster-logo-title">
+                <span class="poster-logo-x">X</span><span class="poster-logo-tur">TUR</span>
+              </div>
+              <span class="poster-logo-sub">AI SECURITY MONITORING SYSTEM</span>
+            </div>
           </div>
           <h1 class="hero-title poster-style">
             Smarter Surveillance <br><span class="gradient-cyan">for a Safer Tomorrow</span>
@@ -1336,12 +1332,12 @@
         </p>
 
         <div class="closing-cta-box no-print">
-          <button class="btn-glow large" onclick="window.print()">
-            <i data-lucide="file-down"></i> Simpan Dokumen Ini (PDF Rapi)
-          </button>
-          <button class="btn-outline large" onclick="exportToPowerPoint()">
-            <i data-lucide="download"></i> Unduh Berkas Presentasi (.PPTX)
-          </button>
+          <a href="https://wa.me/6281234567890" target="_blank" class="btn-glow large">
+            <i data-lucide="message-square"></i> Hubungi Kami & Jadwalkan Demo
+          </a>
+          <a href="#katalog" class="btn-outline large">
+            <i data-lucide="layers"></i> Jelajahi Katalog Solusi
+          </a>
         </div>
 
         <div class="contact-card-modern">

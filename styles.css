@@ -178,31 +178,39 @@ p {
   gap: 0.75rem;
 }
 
-.brand-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #1e40af, #0284c7);
+.brand-logo-img-wrap {
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
   flex-shrink: 0;
 }
 
-.brand-icon {
-  width: 18px;
-  height: 18px;
-  color: #fff;
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.35));
 }
 
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   letter-spacing: -0.01em;
   display: flex;
   align-items: center;
+}
+
+.brand-name-x {
+  color: #0284c7;
+  font-weight: 900;
+}
+
+.brand-name-tur {
+  color: var(--text-primary);
+  font-weight: 900;
 }
 
 .brand-tag {
@@ -212,7 +220,7 @@ p {
   border-radius: 4px;
   background: linear-gradient(90deg, #1e40af, #0284c7);
   color: #fff;
-  margin-left: 6px;
+  margin-left: 8px;
   letter-spacing: 0.04em;
 }
 
@@ -268,54 +276,7 @@ p {
 
 
 
-.export-actions-group {
-  display: flex;
-  gap: 6px;
-}
 
-.btn-chip-export {
-  text-decoration: none;
-  padding: 5px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  transition: all var(--transition-smooth);
-}
-
-.btn-chip-export.pdf {
-  background: rgba(30, 64, 175, 0.08);
-  color: #1e40af;
-  border: 1px solid rgba(30, 64, 175, 0.2);
-}
-
-.btn-chip-export.pdf:hover {
-  background: #1e40af;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
-  transform: translateY(-1px);
-}
-
-.btn-chip-export.pptx {
-  background: rgba(5, 150, 105, 0.08);
-  color: #059669;
-  border: 1px solid rgba(5, 150, 105, 0.2);
-}
-
-.btn-chip-export.pptx:hover {
-  background: #059669;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-  transform: translateY(-1px);
-}
-
-.btn-chip-export svg {
-  width: 14px;
-  height: 14px;
-}
 
 .hidden { display: none !important; }
 
@@ -398,15 +359,38 @@ p {
 
 /* Poster Identity Styling */
 .brand-poster-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.9rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--bg-card-border);
+  padding: 6px 16px 6px 10px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-brand-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.4));
+}
+
+.poster-brand-text-block {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 0.75rem;
+  gap: 10px;
+}
+
+.poster-logo-title {
+  display: flex;
+  align-items: center;
 }
 
 .poster-logo-x {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: #0284c7;
   letter-spacing: -0.04em;
@@ -414,7 +398,7 @@ p {
 
 .poster-logo-tur {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -422,7 +406,7 @@ p {
 
 .poster-logo-sub {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #0284c7;
   letter-spacing: 0.08em;
