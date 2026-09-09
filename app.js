@@ -98,6 +98,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // --------------------------------------------------------------------------
+  // 5B. DETECTION MATRIX CATEGORY FILTER CHIPS
+  // --------------------------------------------------------------------------
+  const detFilterChips = document.querySelectorAll('.det-chip-btn');
+  const detCards = document.querySelectorAll('.det-card');
+
+  detFilterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      detFilterChips.forEach(b => b.classList.remove('active'));
+      chip.classList.add('active');
+
+      const selectedCat = chip.getAttribute('data-cat');
+
+      detCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (selectedCat === 'all' || cardCat === selectedCat) {
+          card.classList.remove('is-filtered-out');
+        } else {
+          card.classList.add('is-filtered-out');
+        }
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
   // 6. DASHBOARD SHOWCASE TABS
   // --------------------------------------------------------------------------
   const tabButtons = document.querySelectorAll('.dash-tab-btn');

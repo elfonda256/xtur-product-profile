@@ -3399,6 +3399,259 @@ body.theme-light .bg-glow-orb.orb-4 {
   display: block;
 }
 
+/* --------------------------------------------------------------------------
+   DETECTION CATEGORY FILTER CHIPS
+   -------------------------------------------------------------------------- */
+.det-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.det-chip-btn {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--bg-card-border);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.det-chip-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.det-chip-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.det-chip-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(30, 64, 175, 0.25);
+}
+
+.det-card.is-filtered-out {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   INDUSTRY SOLUTION CATALOG (KATALOG SEKTOR)
+   -------------------------------------------------------------------------- */
+.katalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.katalog-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.katalog-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 16px 30px -8px rgba(2, 132, 199, 0.18);
+}
+
+.katalog-card.highlight-katalog {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: linear-gradient(to bottom, var(--bg-surface), var(--bg-surface-elevated));
+}
+
+.katalog-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1rem;
+}
+
+.katalog-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.katalog-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+.katalog-icon-wrap.blue { background: rgba(30, 64, 175, 0.12); color: #1e40af; }
+.katalog-icon-wrap.amber { background: rgba(217, 119, 6, 0.12); color: #d97706; }
+.katalog-icon-wrap.orange { background: rgba(234, 88, 12, 0.12); color: #ea580c; }
+.katalog-icon-wrap.emerald { background: rgba(5, 150, 105, 0.12); color: #059669; }
+.katalog-icon-wrap.rose { background: rgba(225, 29, 72, 0.12); color: #e11d48; }
+.katalog-icon-wrap.purple { background: rgba(124, 58, 237, 0.12); color: #7c3aed; }
+
+body.theme-dark .katalog-icon-wrap.blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+body.theme-dark .katalog-icon-wrap.amber { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+body.theme-dark .katalog-icon-wrap.orange { background: rgba(249, 115, 22, 0.2); color: #fb923c; }
+body.theme-dark .katalog-icon-wrap.emerald { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+body.theme-dark .katalog-icon-wrap.rose { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+body.theme-dark .katalog-icon-wrap.purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+
+.katalog-header-text h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.katalog-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.katalog-badge.blue { background: rgba(30, 64, 175, 0.09); color: #1e40af; }
+.katalog-badge.amber { background: rgba(217, 119, 6, 0.09); color: #d97706; }
+.katalog-badge.orange { background: rgba(234, 88, 12, 0.09); color: #ea580c; }
+.katalog-badge.emerald { background: rgba(5, 150, 105, 0.09); color: #059669; }
+.katalog-badge.rose { background: rgba(225, 29, 72, 0.09); color: #e11d48; }
+.katalog-badge.purple { background: rgba(124, 58, 237, 0.09); color: #7c3aed; }
+
+body.theme-dark .katalog-badge.blue { background: rgba(59, 130, 246, 0.18); color: #93c5fd; }
+body.theme-dark .katalog-badge.amber { background: rgba(245, 158, 11, 0.18); color: #fde68a; }
+body.theme-dark .katalog-badge.orange { background: rgba(249, 115, 22, 0.18); color: #fed7aa; }
+body.theme-dark .katalog-badge.emerald { background: rgba(16, 185, 129, 0.18); color: #a7f3d0; }
+body.theme-dark .katalog-badge.rose { background: rgba(244, 63, 94, 0.18); color: #fecdd3; }
+body.theme-dark .katalog-badge.purple { background: rgba(139, 92, 246, 0.18); color: #ddd6fe; }
+
+.katalog-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.katalog-feature-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1.25rem;
+  padding: 8px 12px;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bg-card-border);
+}
+
+.katalog-feature-tags span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.katalog-feature-tags span svg {
+  width: 13px;
+  height: 13px;
+  color: #10b981;
+}
+
+.katalog-spec-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--bg-card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.katalog-spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+}
+
+.katalog-spec-item .lbl {
+  color: var(--text-muted);
+}
+
+.katalog-spec-item .val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.katalog-cta-box {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(2, 132, 199, 0.06));
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+body.theme-dark .katalog-cta-box {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(2, 132, 199, 0.12));
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.katalog-cta-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.katalog-cta-text p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .katalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .katalog-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .katalog-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}
+
 /* Print rule: Completely disable background animation */
 @media print {
   .cyber-bg-layer {

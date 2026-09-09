@@ -44,7 +44,8 @@
       <nav class="quick-nav">
         <a href="#cover" class="nav-link">Beranda</a>
         <a href="#tentang" class="nav-link">Manfaat</a>
-        <a href="#fitur" class="nav-link">Fitur & Solusi</a>
+        <a href="#fitur" class="nav-link">Kemampuan AI</a>
+        <a href="#katalog" class="nav-link">Katalog Solusi</a>
         <a href="#dashboard" class="nav-link">Galeri Sistem</a>
         <a href="#spesifikasi" class="nav-link">Spesifikasi</a>
       </nav>
@@ -334,13 +335,32 @@
       </div>
 
       <div class="slide-content">
+        <!-- Interactive Category Filter Chips -->
+        <div class="det-filter-chips no-print">
+          <button class="det-chip-btn active" data-cat="all">
+            <i data-lucide="layers"></i> Semua Kategori (6)
+          </button>
+          <button class="det-chip-btn" data-cat="public">
+            <i data-lucide="shield"></i> Keamanan Publik
+          </button>
+          <button class="det-chip-btn" data-cat="traffic">
+            <i data-lucide="car"></i> Lalu Lintas & Kendaraan
+          </button>
+          <button class="det-chip-btn" data-cat="hse">
+            <i data-lucide="hard-hat"></i> K3 & Keselamatan Kerja
+          </button>
+          <button class="det-chip-btn" data-cat="perimeter">
+            <i data-lucide="shield-alert"></i> Perimeter & Zona Terlarang
+          </button>
+        </div>
+
         <!-- 6 Detection Capability Cards from Reference Poster -->
         <div class="detection-cards-row">
           
           <!-- 1. Person Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="public">
             <div class="det-visual-box">
-              <img src="assets/images/01-dashboard-overview.png" alt="Person Detection" class="det-thumb">
+              <img src="assets/images/det-person.jpg" alt="Person Detection" class="det-thumb">
               <div class="det-tag-pill cyan"><i data-lucide="user"></i> Person Detection</div>
             </div>
             <div class="det-info">
@@ -350,9 +370,9 @@
           </div>
 
           <!-- 2. Vehicle Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="traffic">
             <div class="det-visual-box">
-              <img src="assets/images/03-cameras-monitor.png" alt="Vehicle Detection" class="det-thumb">
+              <img src="assets/images/det-vehicle.jpg" alt="Vehicle Detection" class="det-thumb">
               <div class="det-tag-pill blue"><i data-lucide="car"></i> Vehicle Detection</div>
             </div>
             <div class="det-info">
@@ -362,9 +382,9 @@
           </div>
 
           <!-- 3. PPE Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="hse">
             <div class="det-visual-box">
-              <img src="assets/images/02-detection-logs.png" alt="PPE Detection" class="det-thumb">
+              <img src="assets/images/det-ppe.jpg" alt="PPE Detection" class="det-thumb">
               <div class="det-tag-pill amber"><i data-lucide="hard-hat"></i> PPE Detection</div>
             </div>
             <div class="det-info">
@@ -374,9 +394,9 @@
           </div>
 
           <!-- 4. Fire & Smoke Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="hse">
             <div class="det-visual-box">
-              <img src="assets/images/03-cameras-monitor.png" alt="Fire & Smoke Detection" class="det-thumb">
+              <img src="assets/images/det-fire-smoke.jpg" alt="Fire & Smoke Detection" class="det-thumb">
               <div class="det-tag-pill red"><i data-lucide="flame"></i> Fire & Smoke</div>
             </div>
             <div class="det-info">
@@ -386,9 +406,9 @@
           </div>
 
           <!-- 5. Intrusion Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="perimeter">
             <div class="det-visual-box">
-              <img src="assets/images/01-dashboard-overview.png" alt="Intrusion Detection" class="det-thumb">
+              <img src="assets/images/det-intrusion.jpg" alt="Intrusion Detection" class="det-thumb">
               <div class="det-tag-pill rose"><i data-lucide="shield-alert"></i> Intrusion Detection</div>
             </div>
             <div class="det-info">
@@ -398,9 +418,9 @@
           </div>
 
           <!-- 6. Crowd Detection -->
-          <div class="det-card">
+          <div class="det-card" data-category="public">
             <div class="det-visual-box">
-              <img src="assets/images/05-reports-analytics-bottom.png" alt="Crowd Detection" class="det-thumb">
+              <img src="assets/images/det-crowd.jpg" alt="Crowd Detection" class="det-thumb">
               <div class="det-tag-pill navy"><i data-lucide="users"></i> Crowd Detection</div>
             </div>
             <div class="det-info">
@@ -512,7 +532,200 @@
       <div class="print-page-number">Halaman 5</div>
     </section>
 
-    <!-- ==================== SLIDE / BAB 6: GALERI DASHBOARD ==================== -->
+    <!-- ==================== SLIDE / BAB 6: KATALOG KATEGORI & SOLUSI INDUSTRI ==================== -->
+    <section id="katalog" class="presentation-slide" data-slide-title="Katalog Solusi & Penerapan Industri">
+      <div class="print-header-bar">
+        <span>XTUR VISION AI — BAB 06: KATALOG SOLUSI INDUSTRI</span>
+        <span>CV MAUDY NETWORK KOMUNIKASI</span>
+      </div>
+
+      <div class="slide-header">
+        <div class="section-badge"><i data-lucide="layers"></i> KATALOG LENGKAP & SPESIFIKASI</div>
+        <h2 class="section-heading">Katalog Solusi & Sektor Penerapan</h2>
+        <p class="section-subtext">Paket konfigurasi software CCTV berbasis AI XTUR yang dirancang fleksibel untuk kebutuhan spesifik perusahaan, industri manufaktur, dan fasilitas umum Anda.</p>
+      </div>
+
+      <div class="slide-content">
+        <div class="katalog-grid">
+
+          <!-- 1. Perkantoran & Gedung Korporat -->
+          <div class="katalog-card">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap blue"><i data-lucide="building-2"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge blue">Smart Building</span>
+                <h3>Gedung & Perkantoran</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Solusi pengawasan lobi, lift, dan lantai eksekutif untuk perlindungan tenan serta privasi pengunjung secara menyeluruh.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> Person Detection</span>
+              <span><i data-lucide="check-circle-2"></i> Privacy Face Blur</span>
+              <span><i data-lucide="check-circle-2"></i> Anomaly Alert</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">4 - 8 IP Cam (1080p)</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">NVIDIA RTX 3050 / i7</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pabrik & Manufaktur -->
+          <div class="katalog-card highlight-katalog">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap amber"><i data-lucide="factory"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge amber">K3 & Keselamatan Kerja</span>
+                <h3>Pabrik & Manufaktur</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Audit otomatis kepatuhan APD (helm & rompi), deteksi dini titik api dalam 3 detik, dan proteksi zona mesin berputar.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> PPE APD Compliance</span>
+              <span><i data-lucide="check-circle-2"></i> Fire & Smoke Alert</span>
+              <span><i data-lucide="check-circle-2"></i> Zona Bahaya</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">8 - 16 IP Cam IP67</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">NVIDIA RTX 3060 / 16GB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Proyek Konstruksi & Infrastruktur -->
+          <div class="katalog-card">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap orange"><i data-lucide="hard-hat"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge orange">Konstruksi & Sipil</span>
+                <h3>Proyek & Lapangan</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Proteksi perimeter proyek 24 jam untuk mencegah pencurian material besi/kabel dan pemantauan keselamatan pekerja konstruksi.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> Safety Vest & Helmet</span>
+              <span><i data-lucide="check-circle-2"></i> Perimeter Intrusion</span>
+              <span><i data-lucide="check-circle-2"></i> Alat Berat Tracking</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">4 - 8 Solar / 4G PTZ</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">Mini Edge AI Box</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Retail, Mall & Swalayan -->
+          <div class="katalog-card">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap emerald"><i data-lucide="shopping-bag"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge emerald">Analisis Ritel</span>
+                <h3>Mall & Pusat Belanja</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Peta panas (heatmap) konsentrasi pengunjung, hitung jumlah arus lalu-lalang (footfall), dan deteksi kerumunan di area promo.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> Crowd Detection</span>
+              <span><i data-lucide="check-circle-2"></i> Footfall Counter</span>
+              <span><i data-lucide="check-circle-2"></i> Heatmap Kepadatan</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">8 - 16 Dome 4K Wide</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">NVIDIA RTX 3060 / i7</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Fasilitas Medis & Rumah Sakit -->
+          <div class="katalog-card">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap rose"><i data-lucide="hospital"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge rose">Kesehatan & Medis</span>
+                <h3>Rumah Sakit & Klinik</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Menjaga kesterilan ruang isolasi & ICU, monitoring jalur ambulans IGD bebas hambatan, serta privasi wajah pasien 100% terlindungi.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> Zona Steril Intrusion</span>
+              <span><i data-lucide="check-circle-2"></i> Jalur Darurat IGD</span>
+              <span><i data-lucide="check-circle-2"></i> Privasi Pasien (UU PDP)</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">6 - 12 IP Cam Medis</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">Server High Availability</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Kampus & Institusi Pendidikan -->
+          <div class="katalog-card">
+            <div class="katalog-card-header">
+              <div class="katalog-icon-wrap purple"><i data-lucide="graduation-cap"></i></div>
+              <div class="katalog-header-text">
+                <span class="katalog-badge purple">Pendidikan & Sekolah</span>
+                <h3>Kampus & Sekolah</h3>
+              </div>
+            </div>
+            <p class="katalog-desc">Pemantauan gerbang utama masuk/keluar siswa, deteksi kerumunan abnormal, dan pencatatan plat nomor kendaraan warga kampus.</p>
+            <div class="katalog-feature-tags">
+              <span><i data-lucide="check-circle-2"></i> ALPR Plat Nomor</span>
+              <span><i data-lucide="check-circle-2"></i> Deteksi Kerumunan</span>
+              <span><i data-lucide="check-circle-2"></i> Perimeter Malam Hari</span>
+            </div>
+            <div class="katalog-spec-footer">
+              <div class="katalog-spec-item">
+                <span class="lbl">Kamera Direkomendasikan:</span>
+                <span class="val">8 - 16 Bullet IP Cam</span>
+              </div>
+              <div class="katalog-spec-item">
+                <span class="lbl">Kebutuhan Server:</span>
+                <span class="val">NVIDIA RTX 3060 / Linux</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="katalog-cta-box mt-4">
+          <div class="katalog-cta-text">
+            <h4>Membutuhkan Kustomisasi Khusus untuk Industri Anda?</h4>
+            <p>Tim CV Maudy Network Komunikasi siap melakukan survei lokasi (site audit), uji coba POC, dan penyesuaian model AI sesuai kebutuhan operasional lapangan Anda.</p>
+          </div>
+          <button class="btn-glow" onclick="document.getElementById('kontak').scrollIntoView({behavior: 'smooth'})">
+            <i data-lucide="phone-call"></i> Konsultasi Kebutuhan Anda
+          </button>
+        </div>
+      </div>
+      <div class="print-page-number">Halaman 6</div>
+    </section>
+
+    <!-- ==================== SLIDE / BAB 7: GALERI DASHBOARD ==================== -->
     <section id="dashboard" class="presentation-slide" data-slide-title="Antarmuka Dasbor yang Nyaman">
       <div class="print-header-bar">
         <span>XTUR VISION AI — BAB 06: PUSAT PEMANTAUAN</span>
