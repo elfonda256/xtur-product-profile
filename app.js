@@ -409,7 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      const count = Math.min(Math.floor((width * height) / 28000), 55);
+      const isMobile = width < 600;
+      const count = isMobile ? 22 : Math.min(Math.floor((width * height) / 28000), 55);
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
@@ -422,6 +423,18 @@ document.addEventListener('DOMContentLoaded', () => {
       mouse.active = true;
     });
     window.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        mouse.active = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
       mouse.active = false;
     });
 
