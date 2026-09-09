@@ -26,6 +26,35 @@
     <div class="bg-glow-orb orb-1"></div>
     <div class="bg-glow-orb orb-2"></div>
     <div class="bg-glow-orb orb-3"></div>
+    <div class="bg-glow-orb orb-4"></div>
+
+    <!-- AI Surveillance Radar Reticles (Watermark HUD) -->
+    <div class="hud-radar-reticle top-right">
+      <div class="hud-ring ring-1"></div>
+      <div class="hud-ring ring-2"></div>
+      <div class="hud-ring ring-3"></div>
+      <div class="hud-crosshair-h"></div>
+      <div class="hud-crosshair-v"></div>
+      <div class="hud-radar-sweep"></div>
+      <div class="hud-telemetry-text">XTUR_RADAR_SCAN // ONLINE</div>
+    </div>
+    <div class="hud-radar-reticle bottom-left">
+      <div class="hud-ring ring-1"></div>
+      <div class="hud-ring ring-2"></div>
+      <div class="hud-radar-sweep reverse"></div>
+      <div class="hud-telemetry-text">AI_NODE_SYNC // 60 FPS</div>
+    </div>
+
+    <!-- Telemetry Coordinates Floating Watermarks -->
+    <div class="hud-corner-tag top-left">
+      <span>SYS_MODE: NEURAL_DETECTION</span>
+      <span>ACTIVE_NODES: 64 // LATENCY: 12ms</span>
+    </div>
+    <div class="hud-corner-tag bottom-right">
+      <span>SEC_ZONE: CLASSIFIED_MONITOR</span>
+      <span>CAM_FEED: 4K_UHD_STREAM</span>
+    </div>
+
     <div class="cyber-grid-overlay"></div>
     <canvas id="cyberNetworkCanvas"></canvas>
   </div>
@@ -54,16 +83,6 @@
           <i data-lucide="moon" id="themeIcon"></i>
         </button>
 
-        <!-- View Mode Switcher -->
-        <div class="view-toggle-group">
-          <button id="btnDocView" class="toggle-btn active" title="Tampilan Dokumen">
-            <i data-lucide="file-text"></i> Dokumen
-          </button>
-          <button id="btnDeckView" class="toggle-btn" title="Tampilan Slide Presentasi">
-            <i data-lucide="presentation"></i> Slide PPT
-          </button>
-        </div>
-
         <!-- Direct Downloads -->
         <div class="export-actions-group">
           <a href="/exports/XTUR-AI-Surveillance-Product-Profile.pdf" download="XTUR-AI-Surveillance-Product-Profile.pdf" id="btnPrintPDF" class="btn-chip-export pdf" title="Unduh Dokumen PDF Resmi A4">
@@ -76,22 +95,6 @@
       </div>
     </div>
   </header>
-
-  <!-- PPT DECK CONTROLS (Only visible in Slide Mode) -->
-  <div id="slideControls" class="slide-controls-bar no-print hidden">
-    <div class="slide-ctrl-inner">
-      <button id="prevSlideBtn" class="ctrl-arrow-btn" title="Slide Sebelumnya (Panah Kiri)"><i data-lucide="chevron-left"></i></button>
-      <div class="slide-indicator">
-        <span id="currentSlideNum">1</span> / <span id="totalSlideNum">13</span>
-        <span id="currentSlideTitle" class="slide-title-chip">Selamat Datang di XTUR AI</span>
-      </div>
-      <button id="nextSlideBtn" class="ctrl-arrow-btn" title="Slide Berikutnya (Panah Kanan)"><i data-lucide="chevron-right"></i></button>
-      <div class="deck-btn-divider"></div>
-      <button id="fullscreenBtn" class="ctrl-icon-btn" title="Layar Penuh (F11)"><i data-lucide="maximize"></i></button>
-      <button id="deckPptxBtn" class="ctrl-icon-btn highlight-pptx" title="Unduh Slide Ini Menjadi .pptx"><i data-lucide="file-presentation"></i> Unduh PPTX</button>
-      <button id="exitDeckBtn" class="ctrl-text-btn"><i data-lucide="x"></i> Keluar</button>
-    </div>
-  </div>
 
   <!-- MAIN DOCUMENT CONTAINER -->
   <main id="mainContent" class="document-container">
@@ -148,8 +151,8 @@
             <button class="btn-glow" onclick="document.getElementById('kemampuan').scrollIntoView({behavior: 'smooth'})">
               <i data-lucide="scan"></i> Kemampuan Deteksi AI
             </button>
-            <button class="btn-outline" onclick="switchMode('deck')">
-              <i data-lucide="play"></i> Mode Slide PPT
+            <button class="btn-outline" onclick="document.getElementById('spesifikasi').scrollIntoView({behavior: 'smooth'})">
+              <i data-lucide="cpu"></i> Spesifikasi Teknis
             </button>
           </div>
 

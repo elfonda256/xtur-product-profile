@@ -266,39 +266,7 @@ p {
   color: var(--color-primary);
 }
 
-.view-toggle-group {
-  display: flex;
-  background: var(--bg-surface-elevated);
-  padding: 2px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--bg-card-border);
-}
 
-.toggle-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  padding: 4px 10px;
-  font-size: 0.76rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: all var(--transition-fast);
-}
-
-.toggle-btn svg {
-  width: 13px;
-  height: 13px;
-}
-
-.toggle-btn.active {
-  background: var(--color-primary);
-  color: #fff;
-  box-shadow: var(--shadow-sm);
-}
 
 .export-actions-group {
   display: flex;
@@ -347,102 +315,6 @@ p {
 .btn-chip-export svg {
   width: 14px;
   height: 14px;
-}
-
-/* --------------------------------------------------------------------------
-   SLIDE CONTROLS BAR (PPT MODE)
-   -------------------------------------------------------------------------- */
-.slide-controls-bar {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1001;
-  background: var(--bg-surface);
-  box-shadow: var(--shadow-lg);
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--bg-card-border);
-}
-
-.slide-ctrl-inner {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.ctrl-arrow-btn {
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--bg-card-border);
-  color: var(--text-primary);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-fast);
-}
-
-.ctrl-arrow-btn:hover {
-  background: var(--color-primary);
-  color: #fff;
-  transform: scale(1.08);
-}
-
-.slide-indicator {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.slide-title-chip {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  background: var(--bg-surface-elevated);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  max-width: 260px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.deck-btn-divider {
-  width: 1px;
-  height: 22px;
-  background: var(--bg-card-border);
-}
-
-.ctrl-icon-btn, .ctrl-text-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-}
-
-.ctrl-icon-btn:hover, .ctrl-text-btn:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface-elevated);
-}
-
-.ctrl-icon-btn.highlight-pptx {
-  color: var(--color-emerald);
 }
 
 .hidden { display: none !important; }
@@ -2027,47 +1899,7 @@ p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --------------------------------------------------------------------------
-   SLIDE / PRESENTATION (PPT) MODE
-   -------------------------------------------------------------------------- */
-body.mode-deck {
-  overflow: hidden;
-  background: var(--bg-body);
-}
 
-body.mode-deck .app-header {
-  transform: translateY(-100%);
-}
-
-body.mode-deck .document-container {
-  padding: 0;
-  max-width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-body.mode-deck .presentation-slide {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  padding: 4rem 8vw;
-  overflow-y: auto;
-  box-sizing: border-box;
-  border-bottom: none;
-  align-content: center;
-}
-
-body.mode-deck .presentation-slide.active-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  animation: slideFadeIn 0.3s ease;
-}
-
-@keyframes slideFadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
-}
 
 /* --------------------------------------------------------------------------
    COMPREHENSIVE DARK THEME REFINEMENTS (POLISHED & CRISP)
@@ -3510,19 +3342,34 @@ body.theme-light .cyber-grid-overlay {
   animation: orbFloat3 21s ease-in-out infinite alternate;
 }
 
+.bg-glow-orb.orb-4 {
+  top: 25%;
+  left: 45%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 70%);
+  filter: blur(85px);
+  animation: orbFloat1 26s ease-in-out infinite alternate-reverse;
+}
+
 body.theme-light .bg-glow-orb.orb-1 {
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.03) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 70%);
   filter: blur(60px);
 }
 
 body.theme-light .bg-glow-orb.orb-2 {
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, rgba(30, 64, 175, 0.02) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.10) 0%, rgba(30, 64, 175, 0.03) 50%, transparent 70%);
   filter: blur(80px);
 }
 
 body.theme-light .bg-glow-orb.orb-3 {
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.09) 0%, rgba(5, 150, 105, 0.02) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.10) 0%, rgba(5, 150, 105, 0.03) 50%, transparent 70%);
   filter: blur(70px);
+}
+
+body.theme-light .bg-glow-orb.orb-4 {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.07) 0%, rgba(14, 165, 233, 0.02) 50%, transparent 70%);
+  filter: blur(75px);
 }
 
 @keyframes orbFloat1 {
@@ -3541,6 +3388,187 @@ body.theme-light .bg-glow-orb.orb-3 {
   0% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(60px, -50px) scale(1.1); }
   100% { transform: translate(-70px, -30px) scale(0.95); }
+}
+
+/* --------------------------------------------------------------------------
+   FUTURISTIC AI SURVEILLANCE RADAR HUD RETICLES (BACKGROUND WATERMARK)
+   -------------------------------------------------------------------------- */
+.hud-radar-reticle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+  transition: opacity var(--transition-smooth);
+}
+
+body.theme-light .hud-radar-reticle {
+  opacity: 0.22;
+}
+
+.hud-radar-reticle.top-right {
+  top: 40px;
+  right: -80px;
+  width: 460px;
+  height: 460px;
+  animation: reticleSlowSpin 70s linear infinite;
+}
+
+.hud-radar-reticle.bottom-left {
+  bottom: -60px;
+  left: -90px;
+  width: 380px;
+  height: 380px;
+  animation: reticleSlowSpin 90s linear infinite reverse;
+}
+
+.hud-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.25);
+}
+
+body.theme-light .hud-ring {
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+.hud-ring.ring-1 {
+  inset: 0;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.4;
+}
+
+.hud-ring.ring-2 {
+  inset: 18%;
+  border-style: dashed;
+  animation: ringPulse 8s ease-in-out infinite alternate;
+}
+
+.hud-ring.ring-3 {
+  inset: 38%;
+  border-style: dotted;
+  border-width: 1.5px;
+}
+
+.hud-crosshair-h, .hud-crosshair-v {
+  position: absolute;
+  background: rgba(56, 189, 248, 0.18);
+}
+
+body.theme-light .hud-crosshair-h,
+body.theme-light .hud-crosshair-v {
+  background: rgba(2, 132, 199, 0.18);
+}
+
+.hud-crosshair-h {
+  width: 100%;
+  height: 1px;
+}
+
+.hud-crosshair-v {
+  height: 100%;
+  width: 1px;
+}
+
+/* Radar Sweep Beam */
+.hud-radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg at 50% 50%, rgba(56, 189, 248, 0.18) 0deg, rgba(56, 189, 248, 0.05) 45deg, transparent 90deg, transparent 360deg);
+  animation: radarBeamRotate 6s linear infinite;
+}
+
+body.theme-light .hud-radar-sweep {
+  background: conic-gradient(from 0deg at 50% 50%, rgba(2, 132, 199, 0.15) 0deg, rgba(2, 132, 199, 0.03) 45deg, transparent 90deg, transparent 360deg);
+}
+
+.hud-radar-sweep.reverse {
+  animation: radarBeamRotate 8s linear infinite reverse;
+}
+
+.hud-telemetry-text {
+  position: absolute;
+  bottom: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: rgba(56, 189, 248, 0.45);
+  background: rgba(6, 13, 31, 0.35);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+body.theme-light .hud-telemetry-text {
+  color: rgba(2, 132, 199, 0.55);
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+/* Corner Telemetry Tags */
+.hud-corner-tag {
+  position: absolute;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: rgba(56, 189, 248, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  z-index: 1;
+}
+
+body.theme-light .hud-corner-tag {
+  color: rgba(2, 132, 199, 0.45);
+}
+
+.hud-corner-tag.top-left {
+  top: 76px;
+  left: 20px;
+}
+
+.hud-corner-tag.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+@keyframes radarBeamRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes reticleSlowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.96); opacity: 0.3; }
+  100% { transform: scale(1.04); opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .hud-radar-reticle.top-right {
+    width: 280px;
+    height: 280px;
+    right: -60px;
+    top: 50px;
+  }
+  .hud-radar-reticle.bottom-left {
+    display: none;
+  }
+  .hud-corner-tag {
+    display: none;
+  }
 }
 
 /* Interactive Canvas for AI Neural Network Nodes */

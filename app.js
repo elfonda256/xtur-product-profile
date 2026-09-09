@@ -50,113 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) window.lucide.createIcons();
   }
 
-  // --------------------------------------------------------------------------
-  // 3. DUAL-MODE CONTROLLER: DOCUMENT vs PPT SLIDE DECK
-  // --------------------------------------------------------------------------
-  let currentMode = 'document'; // 'document' | 'deck'
-  let currentSlideIndex = 0;
-  const slides = Array.from(document.querySelectorAll('.presentation-slide'));
-  const totalSlides = slides.length;
 
-  const btnDocView = document.getElementById('btnDocView');
-  const btnDeckView = document.getElementById('btnDeckView');
-  const slideControls = document.getElementById('slideControls');
-  const currentSlideNumEl = document.getElementById('currentSlideNum');
-  const totalSlideNumEl = document.getElementById('totalSlideNum');
-  const currentSlideTitleEl = document.getElementById('currentSlideTitle');
-  const prevSlideBtn = document.getElementById('prevSlideBtn');
-  const nextSlideBtn = document.getElementById('nextSlideBtn');
-  const fullscreenBtn = document.getElementById('fullscreenBtn');
-  const exitDeckBtn = document.getElementById('exitDeckBtn');
-  const deckPptxBtn = document.getElementById('deckPptxBtn');
-
-  if (totalSlideNumEl) {
-    totalSlideNumEl.textContent = totalSlides;
-  }
-
-  window.switchMode = function(mode) {
-    currentMode = mode;
-
-    if (mode === 'deck') {
-      document.body.classList.remove('mode-document');
-      document.body.classList.add('mode-deck');
-      btnDocView.classList.remove('active');
-      btnDeckView.classList.add('active');
-      slideControls.classList.remove('hidden');
-      goToSlide(currentSlideIndex);
-      showToast('Mode Slide Presentasi aktif. Gunakan panah kiri/kanan untuk navigasi.');
-    } else {
-      document.body.classList.remove('mode-deck');
-      document.body.classList.add('mode-document');
-      btnDeckView.classList.remove('active');
-      btnDocView.classList.add('active');
-      slideControls.classList.add('hidden');
-      slides.forEach(slide => slide.classList.remove('active-slide'));
-    }
-  };
-
-  if (btnDocView) btnDocView.addEventListener('click', () => switchMode('document'));
-  if (btnDeckView) btnDeckView.addEventListener('click', () => switchMode('deck'));
-  if (exitDeckBtn) exitDeckBtn.addEventListener('click', () => switchMode('document'));
-
-  function goToSlide(index) {
-    if (index < 0) index = 0;
-    if (index >= totalSlides) index = totalSlides - 1;
-    currentSlideIndex = index;
-
-    slides.forEach((slide, i) => {
-      if (i === currentSlideIndex) {
-        slide.classList.add('active-slide');
-        slide.scrollTop = 0;
-      } else {
-        slide.classList.remove('active-slide');
-      }
-    });
-
-    if (currentSlideNumEl) {
-      currentSlideNumEl.textContent = currentSlideIndex + 1;
-    }
-
-    const activeSlide = slides[currentSlideIndex];
-    let title = activeSlide.getAttribute('data-slide-title') || 'Slide ' + (currentSlideIndex + 1);
-    if (currentSlideTitleEl) {
-      currentSlideTitleEl.textContent = title;
-    }
-  }
-
-  if (prevSlideBtn) prevSlideBtn.addEventListener('click', () => goToSlide(currentSlideIndex - 1));
-  if (nextSlideBtn) nextSlideBtn.addEventListener('click', () => goToSlide(currentSlideIndex + 1));
-
-  if (fullscreenBtn) {
-    fullscreenBtn.addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => console.log(err));
-      } else {
-        document.exitFullscreen();
-      }
-    });
-  }
-
-  // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    const lightbox = document.getElementById('imageLightbox');
-    if (!lightbox.classList.contains('hidden') && e.key === 'Escape') {
-      closeLightbox();
-      return;
-    }
-
-    if (currentMode === 'deck') {
-      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-        e.preventDefault();
-        goToSlide(currentSlideIndex + 1);
-      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-        e.preventDefault();
-        goToSlide(currentSlideIndex - 1);
-      } else if (e.key === 'Escape') {
-        switchMode('document');
-      }
-    }
-  });
 
   // --------------------------------------------------------------------------
   // 4. PRINT / PDF EXPORT CONTROLLER (DIRECT DOWNLOAD & BROWSER PRINT)
@@ -177,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Also trigger print dialog after small delay if user wishes to print directly
       setTimeout(() => {
         if (confirm('Berkas PDF resmi telah diunduh. Apakah Anda juga ingin membuka dialog cetak (Print) sekarang?')) {
-          if (currentMode === 'deck') switchMode('document');
           window.print();
         }
       }, 800);
@@ -189,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const btnDownloadPPTX = document.getElementById('btnDownloadPPTX');
   if (btnDownloadPPTX) btnDownloadPPTX.addEventListener('click', downloadPPTXFile);
-  if (deckPptxBtn) deckPptxBtn.addEventListener('click', downloadPPTXFile);
 
   function downloadPPTXFile() {
     showToast('Mengunduh presentasi PowerPoint (.pptx)...');
@@ -342,64 +234,96 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 12. DYNAMIC CYBER NETWORK CANVAS (AI SURVEILLANCE MESH)
+  // 12. NEXT-GEN CYBER AI SURVEILLANCE BACKGROUND ENGINE
+  // Features: Neural Mesh, Travelling Data Packets, Interactive Sonar Ripples,
+  //           and AI Vision Tracking Bounding Boxes.
   // --------------------------------------------------------------------------
   const bgCanvas = document.getElementById('cyberNetworkCanvas');
   if (bgCanvas) {
     const ctx = bgCanvas.getContext('2d');
     let width = window.innerWidth;
     let height = window.innerHeight;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
     let particles = [];
+    let dataPackets = [];
+    let sonarRipples = [];
+    let trackingTargets = [];
     const mouse = { x: -1000, y: -1000, active: false };
 
     function resizeCanvas() {
       width = window.innerWidth;
       height = window.innerHeight;
-      bgCanvas.width = width;
-      bgCanvas.height = height;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      bgCanvas.width = width * dpr;
+      bgCanvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
       initParticles();
     }
 
     class Particle {
-      constructor() {
+      constructor(id) {
+        this.id = id;
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.6;
-        this.vy = (Math.random() - 0.5) * 0.6;
-        this.radius = Math.random() * 1.8 + 1.2;
-        this.baseAlpha = Math.random() * 0.35 + 0.25;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.radius = Math.random() * 2 + 1.2;
+        this.baseAlpha = Math.random() * 0.4 + 0.35;
+        this.pulse = Math.random() * Math.PI * 2;
+        this.pulseSpeed = 0.03 + Math.random() * 0.02;
+        this.haloAlpha = 0;
       }
 
       update() {
         this.x += this.vx;
         this.y += this.vy;
+        this.pulse += this.pulseSpeed;
 
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
+        if (this.haloAlpha > 0) {
+          this.haloAlpha -= 0.02;
+          if (this.haloAlpha < 0) this.haloAlpha = 0;
+        }
 
+        // Screen wrap
+        if (this.x < -20) this.x = width + 20;
+        if (this.x > width + 20) this.x = -20;
+        if (this.y < -20) this.y = height + 20;
+        if (this.y > height + 20) this.y = -20;
+
+        // Subtle mouse repulsion
         if (mouse.active) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140) {
-            const force = (140 - dist) / 140;
-            this.x -= (dx / dist) * force * 1.2;
-            this.y -= (dy / dist) * force * 1.2;
+          if (dist < 150 && dist > 0) {
+            const force = (150 - dist) / 150;
+            this.x -= (dx / dist) * force * 1.5;
+            this.y -= (dy / dist) * force * 1.5;
           }
         }
       }
 
       draw(isDark) {
+        const dynamicAlpha = Math.min(1, Math.max(0.15, this.baseAlpha + Math.sin(this.pulse) * 0.15));
+
+        // Pulsing halo when receiving packet
+        if (this.haloAlpha > 0.05) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius * 3.5, 0, Math.PI * 2);
+          ctx.fillStyle = isDark
+            ? `rgba(56, 189, 248, ${this.haloAlpha * 0.45})`
+            : `rgba(2, 132, 199, ${this.haloAlpha * 0.35})`;
+          ctx.fill();
+        }
+
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         if (isDark) {
-          ctx.fillStyle = `rgba(56, 189, 248, ${this.baseAlpha})`;
+          ctx.fillStyle = `rgba(56, 189, 248, ${dynamicAlpha})`;
           ctx.shadowColor = '#38bdf8';
-          ctx.shadowBlur = 6;
+          ctx.shadowBlur = 8;
         } else {
-          ctx.fillStyle = `rgba(2, 132, 199, ${this.baseAlpha * 0.75})`;
+          ctx.fillStyle = `rgba(2, 132, 199, ${dynamicAlpha * 0.85})`;
           ctx.shadowColor = 'transparent';
           ctx.shadowBlur = 0;
         }
@@ -407,14 +331,209 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    function initParticles() {
-      particles = [];
-      const isMobile = width < 600;
-      const count = isMobile ? 22 : Math.min(Math.floor((width * height) / 28000), 55);
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+    // Packet that travels between connected nodes
+    class DataPacket {
+      constructor(p1, p2) {
+        this.from = p1;
+        this.to = p2;
+        this.progress = 0;
+        this.speed = 0.012 + Math.random() * 0.016;
+        this.alive = true;
+      }
+
+      update() {
+        this.progress += this.speed;
+        if (this.progress >= 1) {
+          this.alive = false;
+          this.to.haloAlpha = 0.8; // Trigger pulse on target node
+        }
+      }
+
+      draw(isDark) {
+        if (!this.alive) return;
+        const curX = this.from.x + (this.to.x - this.from.x) * this.progress;
+        const curY = this.from.y + (this.to.y - this.from.y) * this.progress;
+
+        ctx.beginPath();
+        ctx.arc(curX, curY, 2.5, 0, Math.PI * 2);
+        if (isDark) {
+          ctx.fillStyle = '#ffffff';
+          ctx.shadowColor = '#00d2ff';
+          ctx.shadowBlur = 10;
+        } else {
+          ctx.fillStyle = '#0284c7';
+          ctx.shadowColor = '#38bdf8';
+          ctx.shadowBlur = 4;
+        }
+        ctx.fill();
       }
     }
+
+    // Interactive Sonar Ripple on Click/Touch
+    class SonarRipple {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = 4;
+        this.maxRadius = width < 600 ? 140 : 220;
+        this.alpha = 0.85;
+        this.speed = 3.5;
+        this.alive = true;
+      }
+
+      update() {
+        this.radius += this.speed;
+        this.alpha = (1 - this.radius / this.maxRadius) * 0.85;
+        if (this.radius >= this.maxRadius) {
+          this.alive = false;
+        }
+
+        // Push nearby particles with shockwave
+        particles.forEach(p => {
+          const dx = p.x - this.x;
+          const dy = p.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (Math.abs(dist - this.radius) < 20 && dist > 0) {
+            p.x += (dx / dist) * 1.8;
+            p.y += (dy / dist) * 1.8;
+            p.haloAlpha = 0.7;
+          }
+        });
+      }
+
+      draw(isDark) {
+        if (!this.alive || this.alpha <= 0) return;
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = isDark
+          ? `rgba(56, 189, 248, ${this.alpha})`
+          : `rgba(2, 132, 199, ${this.alpha})`;
+        ctx.lineWidth = 1.8;
+        ctx.shadowColor = isDark ? '#38bdf8' : 'transparent';
+        ctx.shadowBlur = isDark ? 8 : 0;
+        ctx.stroke();
+
+        // Inner echo ring
+        if (this.radius > 30) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius * 0.6, 0, Math.PI * 2);
+          ctx.strokeStyle = isDark
+            ? `rgba(0, 210, 255, ${this.alpha * 0.4})`
+            : `rgba(2, 132, 199, ${this.alpha * 0.3})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
+        // Small origin crosshair
+        if (this.radius < 50) {
+          const crossSize = 8;
+          ctx.beginPath();
+          ctx.moveTo(this.x - crossSize, this.y);
+          ctx.lineTo(this.x + crossSize, this.y);
+          ctx.moveTo(this.x, this.y - crossSize);
+          ctx.lineTo(this.x, this.y + crossSize);
+          ctx.strokeStyle = isDark ? `rgba(255, 255, 255, ${this.alpha})` : `rgba(2, 132, 199, ${this.alpha})`;
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+    }
+
+    // AI Surveillance Bounding Box Tracker
+    class TrackingTarget {
+      constructor(index) {
+        this.targetNode = null;
+        this.boxSize = 36;
+        this.label = index === 0 ? 'OBJ_CAM_01' : 'NEURAL_NODE_07';
+        this.conf = 98.4;
+        this.timer = 0;
+        this.switchDuration = 240 + Math.floor(Math.random() * 180);
+      }
+
+      pickNewTarget() {
+        if (particles.length > 0) {
+          this.targetNode = particles[Math.floor(Math.random() * particles.length)];
+          this.conf = (96.5 + Math.random() * 3.4).toFixed(1);
+        }
+      }
+
+      update() {
+        this.timer++;
+        if (!this.targetNode || this.timer > this.switchDuration) {
+          this.timer = 0;
+          this.pickNewTarget();
+        }
+      }
+
+      draw(isDark) {
+        if (!this.targetNode) return;
+        const x = this.targetNode.x;
+        const y = this.targetNode.y;
+        const s = this.boxSize / 2;
+        const b = 6; // Bracket length
+
+        ctx.save();
+        ctx.strokeStyle = isDark ? 'rgba(56, 189, 248, 0.4)' : 'rgba(2, 132, 199, 0.35)';
+        ctx.lineWidth = 1.2;
+
+        // Draw 4 corner brackets
+        ctx.beginPath();
+        // Top Left
+        ctx.moveTo(x - s, y - s + b); ctx.lineTo(x - s, y - s); ctx.lineTo(x - s + b, y - s);
+        // Top Right
+        ctx.moveTo(x + s - b, y - s); ctx.lineTo(x + s, y - s); ctx.lineTo(x + s, y - s + b);
+        // Bottom Right
+        ctx.moveTo(x + s, y + s - b); ctx.lineTo(x + s, y + s); ctx.lineTo(x + s - b, y + s);
+        // Bottom Left
+        ctx.moveTo(x - s + b, y + s); ctx.lineTo(x - s, y + s); ctx.lineTo(x - s, y + s - b);
+        ctx.stroke();
+
+        // High-tech AI readout tag
+        ctx.font = '9px "JetBrains Mono", monospace';
+        ctx.fillStyle = isDark ? 'rgba(56, 189, 248, 0.65)' : 'rgba(2, 132, 199, 0.7)';
+        ctx.fillText(`${this.label} [${this.conf}%]`, x - s, y - s - 4);
+        ctx.restore();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      dataPackets = [];
+      trackingTargets = [];
+
+      const isMobile = width < 600;
+      const count = isMobile ? 24 : Math.min(Math.floor((width * height) / 24000), 52);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle(i));
+      }
+
+      // Initialize 2 tracking reticles
+      if (!isMobile) {
+        trackingTargets.push(new TrackingTarget(0));
+        trackingTargets.push(new TrackingTarget(1));
+      }
+    }
+
+    // Spawn ripples on click or touch
+    function createRippleAt(clientX, clientY) {
+      const rect = bgCanvas.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      sonarRipples.push(new SonarRipple(x, y));
+      if (sonarRipples.length > 8) sonarRipples.shift();
+    }
+
+    window.addEventListener('click', (e) => {
+      createRippleAt(e.clientX, e.clientY);
+    });
+
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        createRippleAt(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
 
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('mousemove', (e) => {
@@ -440,11 +559,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resizeCanvas();
 
+    let frameCount = 0;
+
     function renderLoop() {
       ctx.clearRect(0, 0, width, height);
       const isDark = document.body.classList.contains('theme-dark');
-      const maxDistance = 125;
+      const maxDistance = width < 600 ? 100 : 135;
+      frameCount++;
 
+      // 1. Draw Mesh Connections
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
         p1.update();
@@ -457,22 +580,28 @@ document.addEventListener('DOMContentLoaded', () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDistance) {
-            const alpha = (1 - dist / maxDistance) * (isDark ? 0.22 : 0.12);
+            const alpha = (1 - dist / maxDistance) * (isDark ? 0.24 : 0.13);
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = isDark ? `rgba(56, 189, 248, ${alpha})` : `rgba(2, 132, 199, ${alpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.lineWidth = 0.85;
             ctx.stroke();
+
+            // Randomly spawn data packet along active connection
+            if (frameCount % 45 === 0 && Math.random() < 0.18 && dataPackets.length < 12) {
+              dataPackets.push(new DataPacket(p1, p2));
+            }
           }
         }
 
+        // Mouse link
         if (mouse.active) {
           const mdx = p1.x - mouse.x;
           const mdy = p1.y - mouse.y;
           const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
           if (mDist < 140) {
-            const mAlpha = (1 - mDist / 140) * (isDark ? 0.35 : 0.2);
+            const mAlpha = (1 - mDist / 140) * (isDark ? 0.38 : 0.22);
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(mouse.x, mouse.y);
@@ -482,6 +611,32 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       }
+
+      // 2. Update & Draw Travelling Data Packets
+      for (let i = dataPackets.length - 1; i >= 0; i--) {
+        const packet = dataPackets[i];
+        packet.update();
+        packet.draw(isDark);
+        if (!packet.alive) {
+          dataPackets.splice(i, 1);
+        }
+      }
+
+      // 3. Update & Draw Sonar Ripples
+      for (let i = sonarRipples.length - 1; i >= 0; i--) {
+        const ripple = sonarRipples[i];
+        ripple.update();
+        ripple.draw(isDark);
+        if (!ripple.alive) {
+          sonarRipples.splice(i, 1);
+        }
+      }
+
+      // 4. Update & Draw AI Vision Tracking Bounding Boxes
+      trackingTargets.forEach(target => {
+        target.update();
+        target.draw(isDark);
+      });
 
       requestAnimationFrame(renderLoop);
     }
