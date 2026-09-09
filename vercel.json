@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/exports/(.*).pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"$1.pdf\"" }
+      ]
+    },
+    {
+      "source": "/exports/(.*).pptx",
+      "headers": [
+        { "key": "Content-Type", "value": "application/vnd.openxmlformats-officedocument.presentationml.presentation" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"$1.pptx\"" }
+      ]
+    }
+  ]
+}
