@@ -1,0 +1,17 @@
+.git
+.gitignore
+node_modules
+npm-debug.log
+yarn-error.log
+*.md
+local-server.js
+start-server.bat
+generate_pdf.js
+generate_pptx.js
+copy_vendor.js
+package.json
+package-lock.json
+vercel.json
+Dockerfile
+docker-compose.yml
+.dockerignore
