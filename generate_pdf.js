@@ -26,13 +26,13 @@ function drawHeaderFooter(doc, pageNum, totalPages = 10, sectionName = 'PROFIL P
   doc.fontSize(7.5).fillColor('#64748B').font('Helvetica-Bold')
      .text(`XTUR VISION AI PLATFORM — ${sectionName.toUpperCase()}`, 40, 20);
   doc.fontSize(7.5).fillColor('#1E40AF').font('Helvetica-Bold')
-     .text('CV MAUDY NETWORK KOMUNIKASI', 40, 20, { align: 'right' });
+     .text('MAUDY NETWORK KOMUNIKASI', 40, 20, { align: 'right' });
   doc.moveTo(40, 31).lineTo(555, 31).strokeColor('#CBD5E1').lineWidth(0.5).stroke();
 
   // Footer
   doc.moveTo(40, 806).lineTo(555, 806).strokeColor('#CBD5E1').lineWidth(0.5).stroke();
   doc.fontSize(7.5).fillColor('#94A3B8').font('Helvetica')
-     .text('© 2026 CV Maudy Network Komunikasi | Portal Resmi: xtur.exac.site | Dokumen Rahasia Perusahaan', 40, 812);
+     .text('© 2026 Maudy Network Komunikasi | Portal Resmi: xtur.exac.site | Dokumen Rahasia Perusahaan', 40, 812);
   doc.fontSize(7.5).fillColor('#475569').font('Helvetica-Bold')
      .text(`Halaman ${pageNum} dari ${totalPages}`, 40, 812, { align: 'right' });
   doc.restore();
@@ -86,7 +86,7 @@ if (fs.existsSync(imgCover)) {
 doc.roundedRect(40, 588, 515, 80, 5).fillColor('#0A192F').strokeColor('#1E3A8A').lineWidth(0.75).fillAndStroke();
 doc.fontSize(10).fillColor('#60A5FA').font('Helvetica-Bold').text('LEMBAR PENGESAHAN DOKUMEN PROFIL PRODUK', 55, 600);
 doc.fontSize(8).fillColor('#CBD5E1').font('Helvetica').lineGap(3)
-   .text('Nama Entitas Pengembang : CV Maudy Network Komunikasi', 55, 618)
+   .text('Nama Entitas Pengembang : Maudy Network Komunikasi', 55, 618)
    .text('Bidang Keahlian Bisnis   : AI Computer Vision, IoT Surveillance & Smart City Solutions', 55, 631)
    .text('Status Distribusi Dokumen: Komersial Enterprise (Edisi Resmi 2026)', 55, 644)
    .text('Kanal Informasi Resmi    : Portal: xtur.exac.site | Email: admin@maudynetwork.id | WA: 0852-3319-5874', 55, 657);
@@ -563,7 +563,7 @@ roiRows.forEach((r, idx) => {
 
 // Implementation Guarantee Callout
 doc.roundedRect(40, 506, 515, 52, 4).fillColor('#F8FAFC').strokeColor('#CBD5E1').lineWidth(0.5).fillAndStroke();
-doc.fontSize(8.5).fillColor('#0F172A').font('Helvetica-Bold').text('Jaminan Kemitraan CV Maudy Network Komunikasi:', 52, 516);
+doc.fontSize(8.5).fillColor('#0F172A').font('Helvetica-Bold').text('Jaminan Kemitraan Maudy Network Komunikasi:', 52, 516);
 doc.fontSize(7.5).fillColor('#475569').font('Helvetica').lineGap(2)
    .text('Setiap penggelaran XTUR didampingi oleh garansi pemeliharaan perangkat lunak selama 12 bulan penuh, pembaruan model deep learning secara berkala, dan pendampingan teknis onsite maupun remote.', 52, 530, { width: 490 });
 
@@ -580,13 +580,13 @@ doc.fontSize(10.5).fillColor('#93C5FD').font('Helvetica').text('Solusi Cerdas, H
 
 doc.fontSize(9.2).fillColor('#CBD5E1').font('Helvetica').lineGap(4).text(
   'Jangan biarkan kamera CCTV Anda hanya menjadi saksi bisu setelah peristiwa musibah terjadi. Hadirkan asisten cerdas berkemampuan inferensi 4.2 milidetik yang aktif melindungi keselamatan karyawan, aset berharga, dan reputasi organisasi Anda 24 jam sehari non-stop.\n\n' +
-  'Tim spesialis kami di CV Maudy Network Komunikasi siap mendampingi organisasi Anda melakukan uji coba langsung (Proof of Concept / POC) pada kamera CCTV eksisting Anda tanpa mengganggu operasional sistem keamanan yang sedang berjalan.',
+  'Tim spesialis kami di Maudy Network Komunikasi siap mendampingi organisasi Anda melakukan uji coba langsung (Proof of Concept / POC) pada kamera CCTV eksisting Anda tanpa mengganggu operasional sistem keamanan yang sedang berjalan.',
   70, 160, { width: 455, align: 'center' }
 );
 
 // Structured Corporate Contact Box
 doc.roundedRect(70, 280, 455, 160, 6).fillColor('#132247').strokeColor('#38BDF8').lineWidth(1).fillAndStroke();
-doc.fontSize(12).fillColor('#FFFFFF').font('Helvetica-Bold').text('CV MAUDY NETWORK KOMUNIKASI', 90, 298);
+doc.fontSize(12).fillColor('#FFFFFF').font('Helvetica-Bold').text('MAUDY NETWORK KOMUNIKASI', 90, 298);
 doc.fontSize(8.5).fillColor('#93C5FD').font('Helvetica').text('Penyedia Solusi AI Vision Surveillance & Sistem Keamanan Terpadu Indonesia', 90, 316);
 
 doc.moveTo(90, 332).lineTo(505, 332).strokeColor('#1E3A8A').lineWidth(0.75).stroke();
@@ -594,12 +594,12 @@ doc.moveTo(90, 332).lineTo(505, 332).strokeColor('#1E3A8A').lineWidth(0.75).stro
 doc.fontSize(8.5).fillColor('#E2E8F0').font('Helvetica').lineGap(3.5)
    .text('• Portal Resmi Platform   : xtur.exac.site', 90, 340)
    .text('• Email Resmi Perusahaan  : admin@maudynetwork.id', 90, 356)
-   .text('• WhatsApp & Hotline      : 0852-3319-5874 (CV Maudy Network Komunikasi)', 90, 372)
+   .text('• WhatsApp & Hotline      : 0852-3319-5874 (Maudy Network Komunikasi)', 90, 372)
    .text('• Konsultasi & Layanan   : Uji Coba POC, Audit Kamera CCTV, & Onsite Deployment', 90, 388)
    .text('• Wilayah Cakupan        : Seluruh Wilayah Republik Indonesia', 90, 404);
 
 // Closing signature footer
-doc.fontSize(8).fillColor('#64748B').text('Dokumen ini disusun dan diterbitkan oleh CV Maudy Network Komunikasi. Seluruh hak cipta dilindungi.', 60, 535, { align: 'center', width: 475 });
+doc.fontSize(8).fillColor('#64748B').text('Dokumen ini disusun dan diterbitkan oleh Maudy Network Komunikasi. Seluruh hak cipta dilindungi.', 60, 535, { align: 'center', width: 475 });
 
 doc.end();
 

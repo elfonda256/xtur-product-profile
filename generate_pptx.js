@@ -9,7 +9,7 @@ if (!fs.existsSync(exportDir)) fs.mkdirSync(exportDir, { recursive: true });
 const pptx = new PptxGenJS();
 pptx.layout = 'LAYOUT_16x9'; // 10 x 5.625 inches
 pptx.title = 'XTUR AI Surveillance Platform — Product Profile';
-pptx.company = 'CV Maudy Network Komunikasi';
+pptx.company = 'Maudy Network Komunikasi';
 
 // Elegant Corporate Palette
 const C_DARK_NAVY = '0A1128';
@@ -42,7 +42,7 @@ function applySlideFrame(slide, categoryTitle) {
   // Footer
   slide.addShape(pptx.ShapeType.line, { x: 0.8, y: 5.15, w: 8.4, h: 0, line: { color: 'CBD5E1', width: 0.5 } });
   slide.addText('XTUR VISION AI PLATFORM — SMARTER SURVEILLANCE FOR A SAFER TOMORROW', { x: 0.8, y: 5.22, fontSize: 7.5, color: '64748B', fontFace: 'Calibri' });
-  slide.addText('CV MAUDY NETWORK KOMUNIKASI', { x: 6.0, y: 5.22, w: 3.2, fontSize: 7.5, color: '64748B', align: 'right', fontFace: 'Calibri' });
+  slide.addText('MAUDY NETWORK KOMUNIKASI', { x: 6.0, y: 5.22, w: 3.2, fontSize: 7.5, color: '64748B', align: 'right', fontFace: 'Calibri' });
 }
 
 // ================= SLIDE 1: COVER (POSTER IDENTITY) =================
@@ -79,7 +79,7 @@ posterCaps.forEach((cap, idx) => {
   s1.addText(`✓  ${cap}`, { x: x + 0.15, y: y + 0.1, w: 2.4, h: 0.32, fontSize: 10, bold: true, color: '60A5FA', fontFace: 'Calibri' });
 });
 
-s1.addText('Diterbitkan Resmi Oleh: CV Maudy Network Komunikasi — Edisi Profil Produk 2026', { x: 0.8, y: 4.85, fontSize: 9.5, color: '94A3B8', fontFace: 'Calibri' });
+s1.addText('Diterbitkan Resmi Oleh: Maudy Network Komunikasi — Edisi Profil Produk 2026', { x: 0.8, y: 4.85, fontSize: 9.5, color: '94A3B8', fontFace: 'Calibri' });
 
 // ================= SLIDE 2: LEMBAR IKHTISAR RESMI (EXECUTIVE POSTER) =================
 const s2 = pptx.addSlide();
@@ -336,16 +336,16 @@ s12.addText('Wujudkan Keamanan Proaktif Bersama XTUR', { x: 0.8, y: 1.2, fontSiz
 s12.addText('Smarter Surveillance for a Safer Tomorrow — Solusi Cerdas untuk Berbagai Kebutuhan Industri', { x: 0.8, y: 1.8, fontSize: 12, color: 'CBD5E1', fontFace: 'Calibri' });
 
 s12.addShape(pptx.ShapeType.rect, { x: 0.8, y: 2.4, w: 8.4, h: 2.1, fill: { color: C_CARD_BG }, line: { color: '38BDF8', width: 0.75 } });
-s12.addText('CV MAUDY NETWORK KOMUNIKASI', { x: 1.1, y: 2.65, fontSize: 14, bold: true, color: C_WHITE, fontFace: 'Calibri' });
+s12.addText('MAUDY NETWORK KOMUNIKASI', { x: 1.1, y: 2.65, fontSize: 14, bold: true, color: C_WHITE, fontFace: 'Calibri' });
 s12.addText('Penyedia Solusi AI Vision Surveillance & Sistem Keamanan Terpadu Indonesia\n\n' +
   '• Portal Resmi Platform : xtur.exac.site\n' +
   '• Email Resmi Perusahaan: admin@maudynetwork.id\n' +
-  '• WhatsApp & Hotline    : 0852-3319-5874 (CV Maudy Network Komunikasi)\n' +
+  '• WhatsApp & Hotline    : 0852-3319-5874 (Maudy Network Komunikasi)\n' +
   '• Layanan Kemitraan     : Konsultasi Arsitektur, Proof of Concept (POC), & Onsite Deployment\n' +
   '• Cakupan Wilayah       : Seluruh Wilayah Republik Indonesia',
   { x: 1.1, y: 3.0, w: 7.8, fontSize: 9.5, color: '93C5FD', fontFace: 'Calibri', lineSpacing: 15 });
 
-s12.addText('© 2026 CV Maudy Network Komunikasi. Seluruh hak cipta dilindungi undang-undang.', { x: 0.8, y: 4.85, fontSize: 9, color: '94A3B8', fontFace: 'Calibri' });
+s12.addText('© 2026 Maudy Network Komunikasi. Seluruh hak cipta dilindungi undang-undang.', { x: 0.8, y: 4.85, fontSize: 9, color: '94A3B8', fontFace: 'Calibri' });
 
 const outPath = path.join(exportDir, 'XTUR-AI-Surveillance-Product-Profile.pptx');
 pptx.writeFile({ fileName: outPath })
