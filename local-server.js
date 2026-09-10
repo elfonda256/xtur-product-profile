@@ -44,7 +44,8 @@ const server = http.createServer((req, res) => {
 
     const headers = { 'Content-Type': contentType };
     if (filePath.includes('exports')) {
-      headers['Content-Disposition'] = `attachment; filename="${path.basename(filePath)}"`;
+      const disposition = ext === '.pdf' ? 'inline' : 'attachment';
+      headers['Content-Disposition'] = `${disposition}; filename="${path.basename(filePath)}"`;
     }
 
     res.writeHead(200, headers);

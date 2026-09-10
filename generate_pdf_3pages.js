@@ -70,37 +70,37 @@ function create3PageDocument(targetFile, onFinish) {
   doc.addPage();
   drawHeaderFooter(1, 'Ringkasan Eksekutif & Arsitektur AI');
 
-  // 1. Hero Dark Header Container (y = 34 to 126, h = 92)
-  doc.roundedRect(38, 34, 519, 92, 6).fillColor(C_DARK_BG).strokeColor(C_PRIMARY).lineWidth(1).fillAndStroke();
+  // 1. Hero Light Header Container (y = 34 to 126, h = 92)
+  doc.roundedRect(38, 34, 519, 92, 6).fillColor('#F0F7FF').strokeColor('#38BDF8').lineWidth(1.2).fillAndStroke();
 
   // Left side: Badge
-  doc.roundedRect(48, 42, 210, 14, 7).fillColor(C_NAVY_BG).strokeColor(C_ACCENT_CYAN).lineWidth(0.5).fillAndStroke();
-  doc.fontSize(6.8).fillColor(C_ACCENT_CYAN).font('Helvetica-Bold').text('XTUR  |  AI SECURITY SURVEILLANCE PLATFORM', 54, 45);
+  doc.roundedRect(48, 42, 215, 14, 7).fillColor('#FFFFFF').strokeColor('#0284C7').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(6.8).fillColor('#0284C7').font('Helvetica-Bold').text('XTUR  |  AI SECURITY SURVEILLANCE PLATFORM', 54, 45);
 
   // Main Hero Heading
-  doc.fontSize(15).fillColor('#FFFFFF').font('Helvetica-Bold').text('Smarter Surveillance for a Safer Tomorrow', 48, 60);
-  doc.fontSize(8).fillColor('#93C5FD').font('Helvetica-Bold')
+  doc.fontSize(15).fillColor('#0F172A').font('Helvetica-Bold').text('Smarter Surveillance for a Safer Tomorrow', 48, 60);
+  doc.fontSize(8).fillColor('#0284C7').font('Helvetica-Bold')
      .text('Transformasi Kamera CCTV Eksisting Menjadi Asisten Keamanan Cerdas & Proaktif 24/7', 48, 78);
 
   // Hero Narrative
-  doc.fontSize(7.2).fillColor('#E2E8F0').font('Helvetica').lineGap(1.5)
+  doc.fontSize(7.2).fillColor('#334155').font('Helvetica').lineGap(1.5)
      .text('XTUR adalah platform AI Computer Vision mutakhir yang mengintegrasikan kamera pengawas eksisting untuk mendeteksi ancaman seketika, menganalisis objek visual, dan mengirimkan peringatan dini sebelum insiden terjadi. Tanpa perlu mengganti kamera ataupun kabel lama.', 48, 92, { width: 355 });
 
   // Embedded Screenshot Thumbnail on the right of Hero Container
   safeImage(doc, path.join(imgDir, '01-dashboard-overview.png'), 412, 42, { width: 135, height: 76 });
-  doc.roundedRect(412, 42, 135, 76, 3).strokeColor('#38BDF8').lineWidth(0.75).stroke();
+  doc.roundedRect(412, 42, 135, 76, 3).strokeColor('#93C5FD').lineWidth(0.75).stroke();
 
   // 2. 4 Telemetry Metrics Row (y = 132 to 184, h = 52)
   const telemetryData = [
     { label: 'LATENSI INFERENSI AI', val: '4.2 ms', sub: 'Kecepatan Deteksi Real-Time', color: '#10B981' },
-    { label: 'PEMANFAATAN CPU', val: '21%', sub: 'Intel i7 Onsite Micro-Server', color: '#38BDF8' },
-    { label: 'BUFFER IN-MEMORY', val: '22.36 MB', sub: 'Arsitektur Redis Non-Loss', color: '#F59E0B' },
+    { label: 'PEMANFAATAN CPU', val: '21%', sub: 'Intel i7 Onsite Micro-Server', color: '#0284C7' },
+    { label: 'BUFFER IN-MEMORY', val: '22.36 MB', sub: 'Arsitektur Redis Non-Loss', color: '#D97706' },
     { label: 'MULTI-STREAM LIVE', val: '4+ Cam', sub: 'Simultan 30 FPS Full HD', color: '#6366F1' }
   ];
 
   let tx = 38;
   telemetryData.forEach((item) => {
-    doc.roundedRect(tx, 132, 124, 52, 4).fillColor('#FFFFFF').strokeColor('#E2E8F0').lineWidth(0.75).fillAndStroke();
+    doc.roundedRect(tx, 132, 124, 52, 4).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
     doc.fontSize(6.2).fillColor(C_TEXT_MUTED).font('Helvetica-Bold').text(item.label, tx + 8, 140);
     doc.fontSize(13.5).fillColor(item.color).font('Helvetica-Bold').text(item.val, tx + 8, 150);
     doc.fontSize(6.2).fillColor(C_TEXT_MAIN).font('Helvetica').text(item.sub, tx + 8, 169);
@@ -126,10 +126,10 @@ function create3PageDocument(targetFile, onFinish) {
 
   // 4. Visual Dashboard Preview & Arsitektur Onsite (y = 302 to 432, h = 130)
   // Left: Dashboard Preview
-  doc.roundedRect(38, 302, 265, 130, 5).fillColor('#0A152E').strokeColor('#1E3A8A').lineWidth(0.75).fillAndStroke();
-  doc.fontSize(7.5).fillColor('#38BDF8').font('Helvetica-Bold').text('LIVE DASHBOARD & MULTI-CAMERA STREAM', 48, 310);
+  doc.roundedRect(38, 302, 265, 130, 5).fillColor('#F8FAFC').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(7.5).fillColor(C_BLUE_DARK).font('Helvetica-Bold').text('LIVE DASHBOARD & MULTI-CAMERA STREAM', 48, 310);
   safeImage(doc, path.join(imgDir, '01-dashboard-overview.png'), 46, 324, { width: 249, height: 100 });
-  doc.roundedRect(46, 324, 249, 100, 2).strokeColor('#38BDF8').lineWidth(0.5).stroke();
+  doc.roundedRect(46, 324, 249, 100, 2).strokeColor('#CBD5E1').lineWidth(0.5).stroke();
 
   // Right: Arsitektur Highlights
   doc.roundedRect(311, 302, 246, 130, 5).fillColor(C_CARD_BG).strokeColor(C_BORDER).lineWidth(0.75).fillAndStroke();
@@ -177,8 +177,8 @@ function create3PageDocument(targetFile, onFinish) {
   // 6. Perbandingan Dampak Operasional & Finansial (y = 560 to 734, h = 174)
   // Left Box: Transformasi Tim Sekuriti
   doc.roundedRect(38, 560, 255, 174, 5).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
-  doc.roundedRect(38, 560, 255, 20, 5).fillColor('#0A152E').strokeColor('#0A152E').fillAndStroke();
-  doc.fontSize(7.5).fillColor('#38BDF8').font('Helvetica-Bold').text('TRANSFORMASI EFISIENSI TIM OPERASIONAL SEKURITI', 48, 566);
+  doc.roundedRect(38, 560, 255, 20, 5).fillColor('#EFF6FF').strokeColor('#BFDBFE').lineWidth(0.5).fillAndStroke();
+  doc.fontSize(7.5).fillColor('#1E40AF').font('Helvetica-Bold').text('TRANSFORMASI EFISIENSI TIM OPERASIONAL SEKURITI', 48, 566);
 
   doc.fontSize(7.1).fillColor(C_TEXT_MAIN).font('Helvetica').lineGap(2.8)
      .text('1. Pengurangan Beban Monitor Manual:', 48, 588, { width: 235 })
@@ -192,8 +192,8 @@ function create3PageDocument(targetFile, onFinish) {
 
   // Right Box: Integrasi Tanpa Gangguan (Zero Disruption)
   doc.roundedRect(301, 560, 256, 174, 5).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
-  doc.roundedRect(301, 560, 256, 20, 5).fillColor('#1E40AF').strokeColor('#1E40AF').fillAndStroke();
-  doc.fontSize(7.5).fillColor('#FFFFFF').font('Helvetica-Bold').text('INTEGRASI TANPA GANGGUAN (ZERO DOWNTIME)', 311, 566);
+  doc.roundedRect(301, 560, 256, 20, 5).fillColor('#F0FDF4').strokeColor('#BBF7D0').lineWidth(0.5).fillAndStroke();
+  doc.fontSize(7.5).fillColor('#166534').font('Helvetica-Bold').text('INTEGRASI TANPA GANGGUAN (ZERO DOWNTIME)', 311, 566);
 
   doc.fontSize(7.1).fillColor(C_TEXT_MAIN).font('Helvetica').lineGap(2.8)
      .text('1. Kompatibilitas Kamera Eksisting (RTSP / ONVIF):', 311, 588, { width: 236 })
@@ -588,50 +588,50 @@ function create3PageDocument(targetFile, onFinish) {
     plX += 176;
   });
 
-  // 4. Official Corporate Contact Box (y = 458 to 736, h = 278)
-  doc.roundedRect(38, 458, 519, 278, 7).fillColor('#0A152E').strokeColor(C_ACCENT_CYAN).lineWidth(1.2).fillAndStroke();
+  // 4. Official Corporate Contact Box (y = 458 to 736, h = 278) - FULL LIGHT MODE
+  doc.roundedRect(38, 458, 519, 278, 7).fillColor('#F0F7FF').strokeColor('#0284C7').lineWidth(1.2).fillAndStroke();
 
   // Header Box
-  doc.fontSize(13).fillColor('#FFFFFF').font('Helvetica-Bold').text('MAUDY NETWORK KOMUNIKASI', 52, 472);
-  doc.fontSize(7.8).fillColor(C_ACCENT_CYAN).font('Helvetica')
+  doc.fontSize(13).fillColor('#0F172A').font('Helvetica-Bold').text('MAUDY NETWORK KOMUNIKASI', 52, 472);
+  doc.fontSize(7.8).fillColor('#0284C7').font('Helvetica-Bold')
      .text('Mitra Resmi Pengembang Solusi AI Vision Surveillance & Sistem Keamanan Terpadu Indonesia', 52, 488);
 
-  doc.moveTo(52, 500).lineTo(543, 500).strokeColor('#1E3A8A').lineWidth(0.75).stroke();
+  doc.moveTo(52, 500).lineTo(543, 500).strokeColor('#BFDBFE').lineWidth(0.75).stroke();
 
-  // Contact Grid: 2x2 Clean Cards inside Navy Container
+  // Contact Grid: 2x2 Clean White Cards inside Container
   // 1. WhatsApp Hotline
-  doc.roundedRect(52, 508, 238, 64, 4).fillColor('#0F1E36').strokeColor('#1E3A8A').lineWidth(0.5).fillAndStroke();
-  doc.fontSize(7).fillColor('#93C5FD').font('Helvetica-Bold').text('HOTLINE & WHATSAPP RESMI KONSULTASI:', 62, 516);
-  doc.fontSize(12).fillColor('#38BDF8').font('Helvetica-Bold').text('0852-3319-5874', 62, 528);
-  doc.fontSize(6.5).fillColor('#94A3B8').font('Helvetica').lineGap(1)
+  doc.roundedRect(52, 508, 238, 64, 4).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(7).fillColor('#1E40AF').font('Helvetica-Bold').text('HOTLINE & WHATSAPP RESMI KONSULTASI:', 62, 516);
+  doc.fontSize(12).fillColor('#0284C7').font('Helvetica-Bold').text('0852-3319-5874', 62, 528);
+  doc.fontSize(6.5).fillColor('#475569').font('Helvetica').lineGap(1)
      .text('Konsultasi teknis, pertanyaan integrasi CCTV, dan pendaftaran jadwal survei demo langsung ke kantor Anda.', 62, 544, { width: 220 });
 
   // 2. Email Resmi
-  doc.roundedRect(304, 508, 239, 64, 4).fillColor('#0F1E36').strokeColor('#1E3A8A').lineWidth(0.5).fillAndStroke();
-  doc.fontSize(7).fillColor('#93C5FD').font('Helvetica-Bold').text('EMAIL RESMI KORPORAT & PENGADAAN:', 314, 516);
-  doc.fontSize(11).fillColor('#38BDF8').font('Helvetica-Bold').text('admin@maudynetwork.id', 314, 528);
-  doc.fontSize(6.5).fillColor('#94A3B8').font('Helvetica').lineGap(1)
+  doc.roundedRect(304, 508, 239, 64, 4).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(7).fillColor('#1E40AF').font('Helvetica-Bold').text('EMAIL RESMI KORPORAT & PENGADAAN:', 314, 516);
+  doc.fontSize(11).fillColor('#0284C7').font('Helvetica-Bold').text('admin@maudynetwork.id', 314, 528);
+  doc.fontSize(6.5).fillColor('#475569').font('Helvetica').lineGap(1)
      .text('Pengajuan surat penawaran harga resmi, penerbitan dokumen RAB, dan kelengkapan administrasi tender.', 314, 544, { width: 220 });
 
   // 3. Portal Web
-  doc.roundedRect(52, 580, 238, 60, 4).fillColor('#0F1E36').strokeColor('#1E3A8A').lineWidth(0.5).fillAndStroke();
-  doc.fontSize(7).fillColor('#93C5FD').font('Helvetica-Bold').text('PORTAL SISTEM & LIVE DEMO:', 62, 588);
-  doc.fontSize(10.5).fillColor('#FFFFFF').font('Helvetica-Bold').text('https://xtur.exac.site', 62, 599);
-  doc.fontSize(6.5).fillColor('#94A3B8').font('Helvetica').lineGap(1)
+  doc.roundedRect(52, 580, 238, 60, 4).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(7).fillColor('#1E40AF').font('Helvetica-Bold').text('PORTAL SISTEM & LIVE DEMO:', 62, 588);
+  doc.fontSize(10.5).fillColor('#0284C7').font('Helvetica-Bold').text('https://xtur.exac.site', 62, 599);
+  doc.fontSize(6.5).fillColor('#475569').font('Helvetica').lineGap(1)
      .text('Eksplorasi modul deteksi, simulasi ROI interaktif, dan unduh brosur spesifikasi teknis platform.', 62, 614, { width: 220 });
 
-  // 4. Jangkauan Layanan
-  doc.roundedRect(304, 580, 239, 60, 4).fillColor('#0F1E36').strokeColor('#1E3A8A').lineWidth(0.5).fillAndStroke();
-  doc.fontSize(7).fillColor('#93C5FD').font('Helvetica-Bold').text('CAKUPAN LAYANAN & DUKUNGAN ONSITE:', 314, 588);
-  doc.fontSize(10.5).fillColor('#FFFFFF').font('Helvetica-Bold').text('Seluruh Wilayah Republik Indonesia', 314, 599);
-  doc.fontSize(6.5).fillColor('#94A3B8').font('Helvetica').lineGap(1)
+  // 4. Layanan & Jangkauan
+  doc.roundedRect(304, 580, 239, 60, 4).fillColor('#FFFFFF').strokeColor('#CBD5E1').lineWidth(0.75).fillAndStroke();
+  doc.fontSize(7).fillColor('#1E40AF').font('Helvetica-Bold').text('CAKUPAN LAYANAN & DUKUNGAN ONSITE:', 314, 588);
+  doc.fontSize(10.5).fillColor('#0F172A').font('Helvetica-Bold').text('Seluruh Wilayah Republik Indonesia', 314, 599);
+  doc.fontSize(6.5).fillColor('#475569').font('Helvetica').lineGap(1)
      .text('Layanan survei lokasi, pengiriman hardware, instalasi fisik, training operator, dan SLA garansi resmi.', 314, 614, { width: 220 });
 
-  // Special Call-To-Action Promo Banner
-  doc.roundedRect(52, 648, 491, 74, 5).fillColor('#064E3B').strokeColor('#10B981').lineWidth(1).fillAndStroke();
-  doc.fontSize(9.5).fillColor('#34D399').font('Helvetica-Bold')
+  // Special Call-To-Action Promo Banner (Soft Light Emerald)
+  doc.roundedRect(52, 648, 491, 74, 5).fillColor('#ECFDF5').strokeColor('#10B981').lineWidth(1.2).fillAndStroke();
+  doc.fontSize(9.5).fillColor('#065F46').font('Helvetica-Bold')
      .text('PENAWARAN KHUSUS: AJUKAN FREE PROOF-OF-CONCEPT (POC) SEKARANG!', 64, 658);
-  doc.fontSize(7.2).fillColor('#ECFDF5').font('Helvetica').lineGap(2)
+  doc.fontSize(7.2).fillColor('#047857').font('Helvetica').lineGap(2)
      .text('Buktikan keandalan dan akurasi sistem deteksi XTUR AI langsung pada 2–4 kamera eksisting fasilitas kantor atau pabrik Anda selama 7–14 hari kerja tanpa biaya komitmen apa pun!', 64, 674, { width: 467 })
      .text('Hubungi WhatsApp kami di 0852-3319-5874 atau kirimkan email ke admin@maudynetwork.id untuk memesan jadwal survei tim engineering kami.', 64, 698, { width: 467 });
 
