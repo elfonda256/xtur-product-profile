@@ -89,7 +89,7 @@ doc.fontSize(8).fillColor('#CBD5E1').font('Helvetica').lineGap(3)
    .text('Nama Entitas Pengembang : CV Maudy Network Komunikasi', 55, 618)
    .text('Bidang Keahlian Bisnis   : AI Computer Vision, IoT Surveillance & Smart City Solutions', 55, 631)
    .text('Status Distribusi Dokumen: Komersial Enterprise (Edisi Resmi 2026)', 55, 644)
-   .text('Kanal Informasi Resmi    : Portal: xtur.exac.site | Surel: contact@maudy.network', 55, 657);
+   .text('Kanal Informasi Resmi    : Portal: xtur.exac.site | Email: admin@maudynetwork.id | WA: 0852-3319-5874', 55, 657);
 
 // ==============================================================================
 // PAGE 2: BAB 01: PENDEKATAN MANUSIAWI & ANALISIS MASALAH
@@ -591,11 +591,12 @@ doc.fontSize(8.5).fillColor('#93C5FD').font('Helvetica').text('Penyedia Solusi A
 
 doc.moveTo(90, 332).lineTo(505, 332).strokeColor('#1E3A8A').lineWidth(0.75).stroke();
 
-doc.fontSize(8.5).fillColor('#E2E8F0').font('Helvetica').lineGap(4)
-   .text('• Portal Resmi Platform   : xtur.exac.site', 90, 342)
-   .text('• Alamat Surel Resmi     : contact@maudy.network | support@xtur.exac.site', 90, 360)
-   .text('• Konsultasi & Layanan   : Uji Coba POC, Perancangan Arsitektur, & Onsite Deployment', 90, 378)
-   .text('• Wilayah Cakupan        : Jakarta, Jawa Barat, Banten, & Seluruh Wilayah Indonesia', 90, 396);
+doc.fontSize(8.5).fillColor('#E2E8F0').font('Helvetica').lineGap(3.5)
+   .text('• Portal Resmi Platform   : xtur.exac.site', 90, 340)
+   .text('• Email Resmi Perusahaan  : admin@maudynetwork.id', 90, 356)
+   .text('• WhatsApp & Hotline      : 0852-3319-5874 (CV Maudy Network Komunikasi)', 90, 372)
+   .text('• Konsultasi & Layanan   : Uji Coba POC, Audit Kamera CCTV, & Onsite Deployment', 90, 388)
+   .text('• Wilayah Cakupan        : Seluruh Wilayah Republik Indonesia', 90, 404);
 
 // Closing signature footer
 doc.fontSize(8).fillColor('#64748B').text('Dokumen ini disusun dan diterbitkan oleh CV Maudy Network Komunikasi. Seluruh hak cipta dilindungi.', 60, 535, { align: 'center', width: 475 });

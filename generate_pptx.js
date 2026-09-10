@@ -339,10 +339,11 @@ s12.addShape(pptx.ShapeType.rect, { x: 0.8, y: 2.4, w: 8.4, h: 2.1, fill: { colo
 s12.addText('CV MAUDY NETWORK KOMUNIKASI', { x: 1.1, y: 2.65, fontSize: 14, bold: true, color: C_WHITE, fontFace: 'Calibri' });
 s12.addText('Penyedia Solusi AI Vision Surveillance & Sistem Keamanan Terpadu Indonesia\n\n' +
   '• Portal Resmi Platform : xtur.exac.site\n' +
-  '• Alamat Surel (Email)  : contact@maudy.network | support@xtur.exac.site\n' +
+  '• Email Resmi Perusahaan: admin@maudynetwork.id\n' +
+  '• WhatsApp & Hotline    : 0852-3319-5874 (CV Maudy Network Komunikasi)\n' +
   '• Layanan Kemitraan     : Konsultasi Arsitektur, Proof of Concept (POC), & Onsite Deployment\n' +
   '• Cakupan Wilayah       : Seluruh Wilayah Republik Indonesia',
-  { x: 1.1, y: 3.05, w: 7.8, fontSize: 10, color: '93C5FD', fontFace: 'Calibri', lineSpacing: 16 });
+  { x: 1.1, y: 3.0, w: 7.8, fontSize: 9.5, color: '93C5FD', fontFace: 'Calibri', lineSpacing: 15 });
 
 s12.addText('© 2026 CV Maudy Network Komunikasi. Seluruh hak cipta dilindungi undang-undang.', { x: 0.8, y: 4.85, fontSize: 9, color: '94A3B8', fontFace: 'Calibri' });
 

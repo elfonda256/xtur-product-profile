@@ -1885,7 +1885,7 @@ body.theme-dark .btn-menu-pill:hover {
 
 .contact-card-modern {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   background: var(--bg-card);
   border: 1px solid var(--bg-card-border);
@@ -1916,6 +1916,18 @@ body.theme-dark .btn-menu-pill:hover {
 .contact-cell p {
   font-size: 0.82rem;
   color: var(--text-secondary);
+}
+
+.contact-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
 }
 
 .contact-cell a {
